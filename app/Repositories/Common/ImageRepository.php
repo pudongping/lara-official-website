@@ -40,7 +40,7 @@ class ImageRepository extends BaseRepository
         $size = 'avatar' == $request->type ? 416 : 1024;
         $types = \Str::plural($request->type);  // 单词转成复数形式
         $result = $this->imageUploadHandler->save($request->image, $types, $user->id, 'image', $size);
-        $guard = \Auth::getDefaultDriver() ?? 'api';  // 获取默认的守卫名称
+        $guard = \Auth::getDefaultDriver() ?? 'admin';  // 获取默认的守卫名称
 
         $input = [
             'user_id' => $user->id,

@@ -3,7 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use Faker\Generator as Faker;
-use App\Models\Admin\Setting\Menu;
+use App\Models\Setting\Menu;
 
 $factory->define(Menu::class, function (Faker $faker) {
 

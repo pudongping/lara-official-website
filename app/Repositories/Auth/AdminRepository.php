@@ -15,7 +15,6 @@ use App\Models\Auth\Admin;
 use App\Exceptions\ApiException;
 use App\Support\Code;
 use App\Models\Common\Image;
-use App\Repositories\Auth\RolesRepository;
 
 class AdminRepository extends BaseRepository
 {
@@ -74,9 +73,9 @@ class AdminRepository extends BaseRepository
     {
         $remeberMe = boolval($request->remember);
         $account = $request->account;
-        $accountField = fetchAccountField($account);
+        $accountField = fetch_account_field($account);
         if ('name' === $accountField) {
-            if (!validateUserName($account)) {
+            if (!validate_user_name($account)) {
                 Code::setCode(Code::ERR_PARAMS, null, ['账号需以字母开头，可以包括字母、数字、下划线、横杠']);
                 return false;
             }

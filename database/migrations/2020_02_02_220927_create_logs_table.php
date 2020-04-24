@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateLogsTable extends Migration
 {
@@ -21,6 +22,7 @@ class CreateLogsTable extends Migration
             $table->text('description')->nullable()->comment('操作描述');
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE `logs` COMMENT='管理员操作日志表'");
     }
 
     /**

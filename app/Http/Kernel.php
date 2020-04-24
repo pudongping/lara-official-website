@@ -21,7 +21,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
 
         // 开启跨域
-        \App\Http\Middleware\EnableCross::class,
+        \App\Http\Middleware\EnableCrossMiddleware::class,
 
     ];
 
@@ -44,11 +44,11 @@ class Kernel extends HttpKernel
         'api' => [
             // 以下为自定义中间件
             // 初始化参数
-            \App\Http\Middleware\InitParams::class,
+            \App\Http\Middleware\InitParamsMiddleware::class,
             // 记录访问日志
-            \App\Http\Middleware\LogInfo::class,
+            \App\Http\Middleware\LogInfoMiddleware::class,
             // 设置 http 请求头部信息
-            \App\Http\Middleware\AcceptHeader::class,
+            \App\Http\Middleware\AcceptHeaderMiddleware::class,
 
             'throttle:60,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,

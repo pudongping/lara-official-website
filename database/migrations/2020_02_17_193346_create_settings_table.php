@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateSettingsTable extends Migration
 {
@@ -22,6 +23,7 @@ class CreateSettingsTable extends Migration
             $table->integer('sort')->default(0)->comment('排序编号');
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE `settings` COMMENT='站点设置表'");
     }
 
     /**

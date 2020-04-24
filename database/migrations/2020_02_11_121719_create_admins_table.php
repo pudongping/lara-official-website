@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateAdminsTable extends Migration
 {
@@ -23,6 +24,7 @@ class CreateAdminsTable extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE `admins` COMMENT='管理员表'");
     }
 
     /**

@@ -30,17 +30,6 @@ class ProductBrand extends Model
     ];
 
     /**
-     * 状态获取器
-     *
-     * @param $value
-     * @return mixed
-     */
-    public function getStatusAttribute($value)
-    {
-        return static::$statusMsg[intval($value)] ?? static::$statusMsg[self::STATUS_ENABLE];
-    }
-
-    /**
      * log 地址获取器
      *
      * @param $value

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateSocialUsersTable extends Migration
 {
@@ -29,6 +30,7 @@ class CreateSocialUsersTable extends Migration
             $table->string('extra')->default('')->comment('其他可能需要保存的数据');
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE `social_users` COMMENT='社会化用户信息表'");
     }
 
     /**

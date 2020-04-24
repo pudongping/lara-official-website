@@ -8,13 +8,13 @@
  * Time: 0:45
  */
 
-if (! function_exists('getCurrentAction')) {
+if (! function_exists('get_current_action')) {
     /**
      * 获取当前路由的控制器名称和方法名称
      *
      * @return array
      */
-    function getCurrentAction()
+    function get_current_action()
     {
         $action = Route::current()->getActionName();
         if (!strstr($action, '@')) {
@@ -42,7 +42,7 @@ if (! function_exists('user_log')) {
             $uid = $user->id;
         }
 
-        $log = new \App\Models\Admin\Setting\Log();
+        $log = new \App\Models\Setting\Log();
         $log->user_id = $uid;
         $log->client_ip = request()->ip();
         $log->guard_name = Auth::getDefaultDriver();
@@ -53,33 +53,33 @@ if (! function_exists('user_log')) {
     }
 }
 
-if (! function_exists('validateChinaPhoneNumber')) {
+if (! function_exists('validate_china_phone_number')) {
     /**
      * 验证中国手机号码是否合法
      *
      * @param string $number
      * @return bool
      */
-    function validateChinaPhoneNumber(string $number): bool
+    function validate_china_phone_number(string $number): bool
     {
         return preg_match('/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199)\d{8}$/', $number);
     }
 }
 
-if (! function_exists('validateUserName')) {
+if (! function_exists('validate_user_name')) {
     /**
      * 验证用户名是否合法
      *
      * @param string $username
      * @return bool
      */
-    function validateUserName(string $username): bool
+    function validate_user_name(string $username): bool
     {
         return preg_match('/^[a-zA-Z]([-_a-zA-Z0-9]{3,20})+$/', $username);
     }
 }
 
-if (! function_exists('fetchAccountField')) {
+if (! function_exists('fetch_account_field')) {
     /**
      * 根据账号的值获取账号字段
      *
@@ -87,12 +87,12 @@ if (! function_exists('fetchAccountField')) {
      * @param string $defaultField
      * @return string
      */
-    function fetchAccountField(string $login, string $defaultField = 'name'): string
+    function fetch_account_field(string $login, string $defaultField = 'name'): string
     {
         $map = [
             'email' => filter_var($login, FILTER_VALIDATE_EMAIL),
-            'phone' => validateChinaPhoneNumber($login),
-            'name' => validateUserName($login)
+            'phone' => validate_china_phone_number($login),
+            'name' => validate_user_name($login)
         ];
         foreach ($map as $field => $value) {
             if ($value) return $field;
@@ -101,7 +101,7 @@ if (! function_exists('fetchAccountField')) {
     }
 }
 
-if (! function_exists('batchUpdate')) {
+if (! function_exists('batch_update')) {
     /**
      * $where = [ 'id' => [180, 181, 182, 183], 'user_id' => [5, 15, 11, 1]];
      * $needUpdateFields = [ 'view_count' => [11, 22, 33, 44], 'updated_at' => ['2019-11-06 06:44:58', '2019-11-30 19:59:34', '2019-11-05 11:58:41', '2019-12-13 01:27:59']];
@@ -130,7 +130,7 @@ if (! function_exists('batchUpdate')) {
      * @param array $needUpdateFields  需要更新的字段
      * @return bool|int  更新数据的条数
      */
-    function batchUpdate(string $tableName, array $where, array $needUpdateFields)
+    function batch_update(string $tableName, array $where, array $needUpdateFields)
     {
 
         if (empty($where) || empty($needUpdateFields)) return false;

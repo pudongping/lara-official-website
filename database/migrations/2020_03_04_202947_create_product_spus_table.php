@@ -24,7 +24,7 @@ class CreateProductSpusTable extends Migration
             $table->string('keywords')->index()->default('')->comment('搜索关键字，多个用|分隔');
             $table->string('tags')->default('')->comment('标签，多个用|分隔');
             $table->string('barcode', 80)->default('')->comment('仓库条码');
-            $table->decimal('price', 10, 2)->index()->comment('商品最低价');
+            $table->decimal('price', 10, 2)->nullable()->index()->comment('商品最低价');
             $table->decimal('market_price', 10, 2)->comment('市场价格');
             $table->float('rating')->default(5)->comment('商品平均评分');
             $table->unsignedInteger('sold_count')->default(0)->comment('累计销量');
@@ -35,7 +35,7 @@ class CreateProductSpusTable extends Migration
             $table->unsignedSmallInteger('warning_stock')->default(0)->comment('库存警告数量');
             $table->string('main_image')->default('')->comment('商品介绍主图 url');
             $table->string('slider_image', 2000)->default('')->comment('封面轮播图 url，json 字符串');
-            $table->unsignedTinyInteger('status')->default(1)->comment('商品状态：1=未上架，2=上架，3=下架，4=预售');
+            $table->unsignedTinyInteger('status')->default(2)->comment('商品状态：1=未上架，2=上架，3=下架，4=预售');
             $table->unsignedMediumInteger('sort')->index()->default(0)->comment('排序编号');
             $table->softDeletes();
             $table->timestamps();

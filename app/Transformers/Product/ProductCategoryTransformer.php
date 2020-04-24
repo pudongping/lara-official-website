@@ -30,7 +30,7 @@ class ProductCategoryTransformer extends BaseTransformer
     {
         return [
             'id' => $resource->id,
-            'pid' => $resource->pid,
+            'pid' => $resource->pid ?? 0,
             'name' => $resource->name,
             'description' => $resource->description,
             'sort' => $resource->sort,

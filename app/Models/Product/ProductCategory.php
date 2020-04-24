@@ -51,17 +51,6 @@ class ProductCategory extends Model
     }
 
     /**
-     * 状态获取器
-     *
-     * @param $value
-     * @return mixed
-     */
-    public function getStatusAttribute($value)
-    {
-        return static::$statusMsg[intval($value)] ?? static::$statusMsg[self::STATUS_ENABLE];
-    }
-
-    /**
      * 获取所有祖先类目的 ID 数组
      *
      * @return array

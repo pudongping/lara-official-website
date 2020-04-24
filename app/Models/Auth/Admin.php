@@ -46,11 +46,6 @@ class Admin extends Authenticatable implements JWTSubject
         'password'
     ];
 
-    public function getStateAttribute($value)
-    {
-        return self::$state[$value] ?? self::$state[self::STATE_NORMAL];
-    }
-
     public function getAvatarAttribute($value)
     {
         return !empty($value) ? config('app.url') . $value : '';

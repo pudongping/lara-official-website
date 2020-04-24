@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateUserAddressesTable extends Migration
 {
@@ -27,6 +28,7 @@ class CreateUserAddressesTable extends Migration
             $table->dateTime('last_used_at')->nullable()->comment('最后一次使用时间');
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE `user_addresses` COMMENT='用户收货地址表'");
     }
 
     /**

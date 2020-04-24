@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateImagesTable extends Migration
 {
@@ -20,6 +21,7 @@ class CreateImagesTable extends Migration
             $table->string('path')->default('')->comment('图片相对路径');
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE `images` COMMENT='图片资源表'");
     }
 
     /**

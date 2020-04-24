@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Admin\Setting\Menu;
+use App\Models\Setting\Menu;
 
 class MenusTableSeeder extends Seeder
 {

@@ -179,10 +179,6 @@ return [
 
         // transformer 包
         Cyvelnet\Laravel5Fractal\Laravel5FractalServiceProvider::class,
-        // https://socialiteproviders.netlify.com/providers/weixin.html
-        \SocialiteProviders\Manager\ServiceProvider::class,
-        // 自己定义的短信服务
-        App\Providers\EasySmsServiceProvider::class
 
     ],
 

@@ -42,17 +42,6 @@ class ProductSpu extends Model
     ];
 
     /**
-     * 状态获取器
-     *
-     * @param $value
-     * @return mixed
-     */
-    public function getStatusAttribute($value)
-    {
-        return static::$statusMsg[intval($value)] ?? static::$statusMsg[self::STATUS_UN_PUTWAY];
-    }
-
-    /**
      * 获取状态的原始值
      *
      * @return mixed

@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Models\Auth\User;
 use App\Models\Auth\Admin;
 
 class GenerateToken extends Command
@@ -13,7 +12,7 @@ class GenerateToken extends Command
      *
      * @var string
      */
-    protected $signature = 'sample:generate-token';
+    protected $signature = 'larashop:generate-token';
 
     /**
      * The console command description.
@@ -40,7 +39,7 @@ class GenerateToken extends Command
     public function handle()
     {
         $allowedGuards = array_keys(config('auth.guards'));
-        $guard = $this->ask('请输入你想为哪个守卫创建 token ？可选值有：'. join('|', $allowedGuards));
+        $guard = $this->ask('请输入你想为哪个守卫创建 token ？可选值有：' . join('|', $allowedGuards));
         if (!in_array($guard, $allowedGuards)) {
             return $this->error('输入的守卫名称不合法！');
         }
@@ -48,9 +47,7 @@ class GenerateToken extends Command
         $userId = $this->ask('输入用户 id');
 
         $user = null;
-        if ('api' == $guard) {
-            $user = User::find($userId);
-         } elseif ('admin' == $guard) {
+        if ('admin' == $guard) {
             $user = Admin::find($userId);
         }
 
@@ -59,11 +56,9 @@ class GenerateToken extends Command
         }
 
         // 一年以后过期
-        $ttl = 365*24*60;
+        $ttl = 365 * 24 * 60;
 
-        if ('api' == $guard) {
-            $this->info(auth('api')->setTTL($ttl)->login($user));
-        } elseif ('admin' == $guard) {
+        if ('admin' == $guard) {
             $this->info(auth('admin')->setTTL($ttl)->login($user));
         } else {
             $this->error('生成 token 失败！');
