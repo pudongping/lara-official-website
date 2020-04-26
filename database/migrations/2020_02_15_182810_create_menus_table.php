@@ -21,7 +21,7 @@ class CreateMenusTable extends Migration
             $table->string('cn_name', 100)->default('')->comment('菜单中文名称');
             $table->string('permission')->default('')->comment('权限，多个权限用|分割');
             $table->string('icon', 100)->default('')->comment('图标');
-            $table->string('file_url')->default('')->comment('文件地址');
+            $table->string('file_url')->nullable()->comment('文件地址');
             $table->text('extra')->nullable()->comment('额外字段');
             $table->text('description')->nullable()->comment('描述');
             $table->smallInteger('sort')->default(0)->comment('排序');
