@@ -115,8 +115,7 @@ class MenusRepository extends BaseRepository
     public function fetchParams($request)
     {
         $input = $request->only(['pid', 'route_name', 'cn_name', 'icon', 'extra', 'description', 'sort', 'state', 'type', 'file_url']);
-        $allowPermissions = $this->permissionsRepository->validatePermissions($request->permission);
-        $input['permission'] = join('|', $allowPermissions);
+        $input['permission'] = $this->permissionsRepository->validatePermissions($request->permission);
         return $input;
     }
 

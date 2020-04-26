@@ -43,4 +43,25 @@ class Menu extends Model
         return $query->where('state', self::STATE_NORMAL);
     }
 
+    /**
+     * 权限-修改器
+     *
+     * @param $value
+     */
+    public function setPermissionAttribute($value)
+    {
+        $this->attributes['permission'] = json_encode($value, JSON_UNESCAPED_UNICODE);
+    }
+
+    /**
+     * 权限-访问器
+     *
+     * @param $value
+     * @return mixed
+     */
+    public function getPermissionAttribute($value)
+    {
+        return json_decode($value, true);
+    }
+
 }
