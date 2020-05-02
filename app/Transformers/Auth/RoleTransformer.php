@@ -37,9 +37,10 @@ class RoleTransformer extends TransformerAbstract
             'id' => $resource->id,
             'name' => $resource->name,
             'cn_name' => $resource->cn_name,
+            'extra' => $resource->extra ? json_decode($resource->extra, true) : [],
             'created_at' => (string)$resource->created_at,
             'updated_at' => (string)$resource->updated_at,
-            'permissions' => $resource->permissions,
+//            'permissions' => $resource->permissions,
 
         ];
     }

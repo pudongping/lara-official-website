@@ -69,11 +69,14 @@ class RolesController extends Controller
      * @param Role $role
      * @return mixed
      */
-    public function edit(Role $role)
+    public function edit(Role $role, RoleRequest $request)
     {
-        $permission = Permission::select(['id', 'name', 'cn_name'])->currentGuard()->get();
-        $this->response->addMeta(compact('permission'));
-        return $this->response->send($role);
+        $data = $this->rolesRepository->edit($request);
+        return $this->response->send($data);
+
+//        $permission = Permission::select(['id', 'name', 'cn_name'])->currentGuard()->get();
+//        $this->response->addMeta(compact('permission'));
+//        return $this->response->send($role);
     }
 
     /**

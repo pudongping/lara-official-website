@@ -15,6 +15,14 @@ use Spatie\Permission\Models\Permission as SpatiePermission;
 class Permission extends SpatiePermission
 {
 
+    const TYPE_PAGE = 1;
+    const TYPE_SPECIAL = 2;
+
+    public static $type = [
+        self::TYPE_PAGE => '页面权限',
+        self::TYPE_SPECIAL => '特殊权限'
+    ];
+
     protected $guard_name = 'admin';
 
     /**

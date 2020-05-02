@@ -37,6 +37,7 @@ class PermissionTransformer extends TransformerAbstract
             'id' => $resource->id,
             'name' => $resource->name,
             'cn_name' => $resource->cn_name,
+            'type' => $resource->type,
             'created_at' => (string)$resource->created_at,
             'updated_at' => (string)$resource->updated_at,
 

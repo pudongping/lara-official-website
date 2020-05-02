@@ -15,15 +15,23 @@ use App\Models\Auth\Role;
 use App\Models\Auth\Permission;
 use App\Exceptions\ApiException;
 use App\Support\Code;
+use App\Models\Setting\Menu;
 
 class RolesRepository extends BaseRepository
 {
 
     protected $model;
+    protected $menu;
+    protected $permission;
 
-    public function __construct(Role $role)
-    {
+    public function __construct(
+        Role $role,
+        Menu $menu,
+        Permission $permission
+    ) {
         $this->model = $role;
+        $this->menu = $menu;
+        $this->permission = $permission;
     }
 
     /**
@@ -59,19 +67,30 @@ class RolesRepository extends BaseRepository
      */
     public function storage($request)
     {
+        $extra = $request->extra;
+        // 验证菜单 id 和权限 id 的有效性
+        $extra = $this->validateMenuPermission($extra);
 
         $input = $request->only('name', 'cn_name');
         $input['guard_name'] = config('api.default_guard_name');
+        $input['extra'] = json_encode($extra, 320);
         $role = $this->store($input);
 
         // 当前选中的所有权限 id
-        $permissionsId = $request->permissions;
-        if ($permissionsId) {
-            $permissions = Permission::whereIn('id', $permissionsId)->get();
-            // 将多个权限同步赋予到一个角色
-            $role->syncPermissions($permissions);
-        }
+//        $permissionsId = $request->permissions;
+//        if ($permissionsId) {
+//            $permissions = Permission::whereIn('id', $permissionsId)->get();
+//            // 将多个权限同步赋予到一个角色
+//            $role->syncPermissions($permissions);
+//        }
 
+        return $role;
+    }
+
+    public function edit($request)
+    {
+        $role = $request->role->toArray();
+        $role['extra'] = $this->prepareMenuPerData($role['extra']);
         return $role;
     }
 
@@ -150,6 +169,118 @@ class RolesRepository extends BaseRepository
             $allowRoles = array_intersect($roles, $rolesInDatabase);
         }
         return $allowRoles;
+    }
+
+    /**
+     * 检验菜单 id 和权限 id 的有效性
+     *
+     * @param $extra
+     * @return array|bool
+     */
+    public function validateMenuPermission($extra)
+    {
+//        {
+//            "name": "roles22",
+//	        "cn_name": "角色22",
+//	        "extra": {
+//                "page": [{"menu_id": 1, "permission": [1, 2]},{"menu_id": 7, "permission": [3]}],
+//		        "special": [4, 5, 7]
+//	        }
+//        }
+        if (empty($extra)) return false;
+        $menuIdAndPer = $this->menu->select('id', 'permission')->status()->get()->toArray();
+        if (empty($menuIdAndPer)) return false;
+        $allPermission = $this->permission->select('id', 'name')->get()->pluck('id', 'name')->toArray();
+        if (empty($allPermission)) return false;
+        $menuPermission = [];
+        $menuIdAndPerId = [];  // 菜单 id 为 key，菜单相对应的权限 id 为值的数组
+        foreach ($menuIdAndPer as $k => $itemMenu) {
+            $menuPermission[$k]['menu_id'] = $itemMenu['id'];  // 菜单 id
+            $menuPermission[$k]['permission'] = [];
+            $menuIdAndPerId[$itemMenu['id']] = [];
+            if (! empty($itemMenu['permission']) && is_array($itemMenu['permission'])) {
+                foreach ($itemMenu['permission'] as $kk => $vv) {
+                    $menuPermission[$k]['permission'][$kk]['permission_id'] = $allPermission[$vv] ?? 0;  // 权限 id
+                    $menuPermission[$k]['permission'][$kk]['permission_name'] = $vv ?? '';  // 权限名称
+                    $menuIdAndPerId[$itemMenu['id']][] = $allPermission[$vv] ?? 0;  // 权限 id
+                }
+            }
+        }
+
+        // 判断权限 id 的有效性
+        $special = [];
+        if (isset($extra['special']) && !empty($extra['special']) && is_array($extra['special'])) {
+            foreach ($extra['special'] as $vvv) {
+                // 判断提交的特殊权限 id 是否在数据库中的权限数组中
+                if (in_array($vvv, array_values($allPermission))) {
+                    $special[] = $vvv;
+                }
+            }
+        }
+
+        $page = [];
+        if (isset($extra['page']) && ! empty($extra['page']) && is_array($extra['page'])) {
+            foreach ($extra['page'] as $kkkk => $vvvv) {
+                // 判断提交的菜单 id 是否合法
+                if (in_array($vvvv['menu_id'], array_column($menuIdAndPer, 'id'))) {
+                    $page[$kkkk]['menu_id'] = $vvvv['menu_id'];  // 菜单 id
+                    if (isset($vvvv['permission']) && !empty($vvvv['permission']) && is_array($vvvv['permission'])) {
+                        foreach ($vvvv['permission'] as $kkkkk => $vvvvv) {
+                            if (in_array($vvvvv, $menuIdAndPerId[$vvvv['menu_id']])) {
+                                $page[$kkkk]['permission'][$kkkkk] = $vvvvv;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return ['page' => $page, 'special' => $special];
+    }
+
+    /**
+     * 将菜单数据和权限数据拼接到角色信息中
+     *
+     * @param $extra  菜单 id 和权限 id json 字符串
+     * @return array|void
+     */
+    public function prepareMenuPerData($extra)
+    {
+        if (empty($extra)) return;
+        $extra = json_decode($extra, true);
+        $menus = $this->menu->get()->toArray();
+        $menuData = [];
+        foreach ($menus as $menu) {
+            $menuData[$menu['id']] = $menu;
+        }
+        $permissionData = [];
+        $permissions = $this->permission->get()->toArray();
+        foreach ($permissions as $permission) {
+            $permissionData[$permission['id']] = $permission;
+        }
+
+        $page = [];
+        if (isset($extra['page']) && ! empty($extra['page']) && is_array($extra['page'])) {
+            foreach ($extra['page'] as $k => $v) {
+                if (isset($v['menu_id'])) {
+                    $page[$k]['menu'] = $menuData[$v['menu_id']] ?? '';
+                }
+                if (isset($v['permission']) && ! empty($v['permission']) && is_array($v['permission'])) {
+                    foreach ($v['permission'] as $kk => $vv) {
+                        $page[$k]['permission'][$kk] = $permissionData[$vv] ?? '';
+                    }
+                }
+            }
+        }
+
+        $special = [];
+        if (isset($extra['special']) && ! empty($extra['special']) && is_array($extra['special'])) {
+            foreach ($extra['special'] as $kkk => $vvv) {
+                $special[$kkk] = $permissionData[$vvv] ?? '';
+            }
+        }
+
+        return ['page' => $page, 'special' => $special];
     }
 
 }

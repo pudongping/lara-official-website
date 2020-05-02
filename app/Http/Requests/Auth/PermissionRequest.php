@@ -4,6 +4,7 @@ namespace App\Http\Requests\Auth;
 
 use App\Http\Requests\Request;
 use Illuminate\Validation\Rule;
+use App\Models\Auth\Permission;
 
 class PermissionRequest extends Request
 {
@@ -25,11 +26,19 @@ class PermissionRequest extends Request
                     Rule::unique('permissions')->ignore($this->permission),
                 ],
                 'cn_name'      => 'required|between:3,25',
+                'type'         => [
+                    'nullable',
+                    Rule::in(array_keys(Permission::$type)),
+                ],
             ],
             'store' => [
                 'name'         => 'required|between:3,25|regex:/^[0-9A-Za-z\-\_]+$/|unique:permissions',
                 'cn_name'      => 'required|between:3,25',
                 'roles'        => 'array',
+                'type'         => [
+                    'nullable',
+                    Rule::in(array_keys(Permission::$type)),
+                ],
             ],
             'massDestroy' => [
                 'ids'         => 'required|array',
@@ -51,6 +60,7 @@ class PermissionRequest extends Request
             'roles.array'          => '角色数据提交的格式错误。',
             'ids.required'         => '批量删除时，缺乏必要参数',
             'ids.array'            => '批量删除时，数据提交的格式错误。',
+            'type.in'              => '权限类型不合法。',
         ];
 
         $messages = array_merge(parent::messages(), $messages);

@@ -59,7 +59,7 @@ class PermissionsRepository extends BaseRepository
      */
     public function storage($request)
     {
-        $input = $request->only('name', 'cn_name');
+        $input = $request->only('name', 'cn_name', 'type');
         $input['guard_name'] = config('api.default_guard_name');
         // 保存权限数据
         $permission = $this->store($input);
@@ -85,7 +85,7 @@ class PermissionsRepository extends BaseRepository
      */
     public function modify($request)
     {
-        $input = $request->only('name', 'cn_name');
+        $input = $request->only('name', 'cn_name', 'type');
         $input['guard_name'] = config('api.default_guard_name');
         $data = $this->update($request->permission, $input);
         return $data;
