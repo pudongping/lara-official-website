@@ -87,6 +87,12 @@ class RolesRepository extends BaseRepository
         return $role;
     }
 
+    /**
+     * 编辑角色显示页面
+     *
+     * @param $request
+     * @return mixed
+     */
     public function edit($request)
     {
         $role = $request->role->toArray();
@@ -102,7 +108,13 @@ class RolesRepository extends BaseRepository
      */
     public function modify($request)
     {
+        $extra = $request->extra;
+        // 验证菜单 id 和权限 id 的有效性
+        $extra = $this->validateMenuPermission($extra);
+
         $input = $request->only('name', 'cn_name');
+        $input['extra'] = json_encode($extra, 320);
+
         $role = $this->update($request->role, $input);
 
         // 先删除用户所有的权限
@@ -111,12 +123,12 @@ class RolesRepository extends BaseRepository
         \Artisan::call('cache:forget spatie.permission.cache');
 
         // 当前选中的所有权限 id
-        $permissionsId = $request->permissions;
-        if ($permissionsId) {
-            $permissions = Permission::whereIn('id', $permissionsId)->get();
-            // 将多个权限同步赋予到一个角色
-            $role->syncPermissions($permissions);
-        }
+//        $permissionsId = $request->permissions;
+//        if ($permissionsId) {
+//            $permissions = Permission::whereIn('id', $permissionsId)->get();
+//            // 将多个权限同步赋予到一个角色
+//            $role->syncPermissions($permissions);
+//        }
 
         return $role;
     }
