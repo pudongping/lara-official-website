@@ -46,6 +46,10 @@ class PermissionsRepository extends BaseRepository
             $model = $model->whereBetween('created_at', $between);
         }
 
+        if (!is_null($request->type)) {
+            $model = $model->where('type', intval($request->type));
+        }
+
         $model = $model->currentGuard();
 
         return $this->usePage($model);
