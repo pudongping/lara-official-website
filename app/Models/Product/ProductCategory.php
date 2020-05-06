@@ -24,10 +24,6 @@ class ProductCategory extends Model
         self::STATUS_UNABLE => '禁用'
     ];
 
-    protected $casts = [
-        'status' => 'boolean',
-    ];
-
     protected $hidden = ['pivot'];
 
     /**

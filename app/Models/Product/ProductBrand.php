@@ -24,11 +24,7 @@ class ProductBrand extends Model
         self::STATUS_ENABLE => '启用',
         self::STATUS_UNABLE => '禁用'
     ];
-
-    protected $casts = [
-        'status' => 'boolean',
-    ];
-
+    
     /**
      * log 地址获取器
      *
