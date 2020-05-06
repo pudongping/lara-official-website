@@ -29,6 +29,16 @@ class ProductBrandTransformer extends BaseTransformer
      */
     public function transform($resource)
     {
+        $categories = $resource->categories;
+        $cateArr = [];
+        if (!$categories->isEmpty()) {
+            $cate = $categories->toArray();
+            foreach ($cate as $item) {
+                $cateArr = str_explode($item['path'], '-');
+                 array_push($cateArr, (string)$item['id']);
+            }
+        }
+
         return [
 
             'id' => $resource->id,
@@ -38,7 +48,7 @@ class ProductBrandTransformer extends BaseTransformer
             'status' => $resource->status,
             'created_at' => (string)$resource->created_at,
             'updated_at' => (string)$resource->updated_at,
-            'categories' => $resource->categories,
+            'categories' => $cateArr,
 
         ];
     }
