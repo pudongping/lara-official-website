@@ -29,14 +29,15 @@ class ProductBrandTransformer extends BaseTransformer
      */
     public function transform($resource)
     {
+        // 将所有的分类数据转为 id 父子级数组
         $categories = $resource->categories;
         $cateArr = [];
         if (!$categories->isEmpty()) {
             $cate = $categories->toArray();
             foreach ($cate as $item) {
                 $pathArr = str_explode($item['path'], '-');
-                array_push($pathArr, (string)$item['id']);
-                $cateArr[] = $pathArr;
+                array_push($pathArr, $item['id']);
+                $cateArr[] = array_map('intval', $pathArr);
             }
         }
 
