@@ -34,8 +34,9 @@ class ProductBrandTransformer extends BaseTransformer
         if (!$categories->isEmpty()) {
             $cate = $categories->toArray();
             foreach ($cate as $item) {
-                $cateArr = str_explode($item['path'], '-');
-                 array_push($cateArr, (string)$item['id']);
+                $pathArr = str_explode($item['path'], '-');
+                array_push($pathArr, (string)$item['id']);
+                $cateArr[] = $pathArr;
             }
         }
 
