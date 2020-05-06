@@ -27,7 +27,11 @@ class ProductCategoryRepository extends BaseRepository
     public function getList($request)
     {
         $search = $request->input('s');
-        $model = $this->model->where(function ($query) use ($search) {
+        $fields = [
+            'id', 'pid', 'name', 'description', 'sort', 'status', 'level', 'created_at', 'updated_at', 'id as value', 'name as label'
+        ];
+        $model = $this->model->select($fields);
+        $model = $model->where(function ($query) use ($search) {
             if (!empty($search)) {
                 $query->orWhere('name', 'like', '%' . $search . '%');
                 $query->orWhere('description', 'like', '%' . $search . '%');
@@ -42,19 +46,13 @@ class ProductCategoryRepository extends BaseRepository
             $model = $model->where('status', intval(boolval($request->status)));
         }
 
-        return $this->usePage($model);
-    }
+        $data = $model->get()->toArray();
 
-    /**
-     * 类目树型结构
-     *
-     * @return array
-     */
-    public function categoryTree()
-    {
-        $result = ProductCategory::all('id', 'pid', 'name')->toArray();
-        $result = make_tree_data($result);
-        return $result;
+        foreach ($data as &$item) {
+            $item['disabled'] = ($item['status'] == ProductCategory::STATUS_ENABLE) ? false : true;
+        }
+
+        return make_tree_data($data);
     }
 
     /**

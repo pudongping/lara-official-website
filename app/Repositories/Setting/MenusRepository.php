@@ -37,7 +37,12 @@ class MenusRepository extends BaseRepository
     public function getList($request)
     {
         $search = $request->input('s');
-        $model = $this->model->where(function ($query) use ($search) {
+        $fields = [
+            'id', 'pid', 'route_name', 'cn_name', 'permission', 'icon', 'file_url', 'extra', 'description',
+            'sort', 'state', 'type', 'created_at', 'updated_at', 'id as value', 'cn_name as label',
+        ];
+        $model = $this->model->select($fields);
+        $model = $model->where(function ($query) use ($search) {
             if (!empty($search)) {
                 $query->orWhere('route_name', 'like', '%' . $search . '%');
                 $query->orWhere('cn_name', 'like', '%' . $search . '%');
@@ -58,28 +63,11 @@ class MenusRepository extends BaseRepository
         }
 
         $data = $model->get()->toArray();
+        foreach ($data as &$item) {
+            $item['disabled'] = ($item['state'] == Menu::STATE_NORMAL) ? false : true;
+        }
 
         return make_tree_data($data);
-    }
-
-    /**
-     * 菜单树形结构
-     *
-     * @return array
-     */
-    public function menuTree()
-    {
-        $fields = [
-            'id as value',
-            'cn_name as label',
-            'id',
-            'pid',
-            'route_name'
-        ];
-        $data = $this->model->select($fields)->status()->get()->toArray();
-        $result = make_tree_data($data);
-
-        return $result;
     }
 
     /**

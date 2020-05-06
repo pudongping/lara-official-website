@@ -32,17 +32,6 @@ class ProductCategoryController extends Controller
     }
 
     /**
-     * 类目树型结构
-     *
-     * @return mixed
-     */
-    public function categoryTree()
-    {
-        $data = $this->productCategoryRepository->categoryTree();
-        return $this->response->send($data);
-    }
-
-    /**
      * 添加类目
      *
      * @param ProductCategoryRequest $request

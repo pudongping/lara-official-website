@@ -55,7 +55,6 @@ Route::group([
         // =======================系统相关=========================
         Route::get('clearCache', 'Setting\SettingsController@clearCache')->name('settings.clearCache');  // 清空所有缓存
         Route::resource('menus', 'Setting\MenusController')->except(['create', 'show']);  // 菜单
-        Route::get('menuTree', 'Setting\MenusController@menuTree')->name('settings.menuTree');  // 菜单树形结构
 
         // =======================工具相关=========================
         Route::post('images', 'Common\ImagesController@store')->name('images.store');  // 上传图片
@@ -64,7 +63,6 @@ Route::group([
         // =======================商品相关=========================
         Route::group(['prefix' => 'product'], function () {
             Route::get('categories', 'Product\ProductCategoryController@index')->name('product.categories.index');  // 商品类目列表
-            Route::get('categoryTree', 'Product\ProductCategoryController@categoryTree')->name('product.categories.categoryTree');  // 商品类目树型结构
             Route::post('categories', 'Product\ProductCategoryController@store')->name('product.categories.store');  // 新建类目
             Route::get('categories/{category}/edit', 'Product\ProductCategoryController@edit')->name('product.categories.edit');  // 编辑显示类目
             Route::patch('categories/{category}', 'Product\ProductCategoryController@update')->name('product.categories.update');  // 编辑类目-数据提交

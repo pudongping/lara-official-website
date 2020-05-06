@@ -40,17 +40,6 @@ class MenusController extends Controller
     }
 
     /**
-     * 菜单树形结构
-     *
-     * @return mixed
-     */
-    public function menuTree()
-    {
-        $data = $this->menusRepository->menuTree();
-        return $this->response->send($data);
-    }
-
-    /**
      * 添加菜单-数据处理
      *
      * @param MenuRequest $request

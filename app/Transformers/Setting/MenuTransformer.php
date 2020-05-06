@@ -42,6 +42,7 @@ class MenuTransformer extends BaseTransformer
             'sort' => $resource->sort,
             'state' => $resource->state ?? Menu::STATE_NORMAL,
             'type' => $resource->type ?? Menu::TYPE_FRONT,
+            'disabled' => ($resource->state == Menu::STATE_NORMAL) ? false : true,
             'file_url' => $resource->file_url,
             'created_at' => $resource->created_at->format('Y-m-d H:i:s'),
             'updated_at' => $resource->updated_at->format('Y-m-d H:i:s'),
