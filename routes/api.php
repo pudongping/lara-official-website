@@ -73,7 +73,6 @@ Route::group([
             Route::get('brands/{brand}/edit', 'Product\ProductBrandController@edit')->name('product.brands.edit');  // 编辑显示类目
             Route::patch('brands/{brand}', 'Product\ProductBrandController@update')->name('product.brands.update');  // 编辑品牌数据提交
             Route::delete('brands/{brand}', 'Product\ProductBrandController@destroy')->name('product.brands.destroy');  // 删除品牌
-            Route::get('brands/cate', 'Product\ProductBrandController@brandCateCombine')->name('product.brands.brandCateCombine');  // 品牌和分类的关联关系
 
             Route::get('spus', 'Product\ProductSpuController@index')->name('product.spus.index');  // 商品列表
             Route::post('spus', 'Product\ProductSpuController@store')->name('product.spus.store');  // 添加主商品

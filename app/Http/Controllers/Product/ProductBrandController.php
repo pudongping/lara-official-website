@@ -87,19 +87,8 @@ class ProductBrandController extends Controller
      public function destroy(ProductBrand $brand)
      {
          $brand->delete();
-         $brand->categories()->detach();
          return $this->response->send();
      }
 
-    /**
-     * 根据品牌找寻品牌所对应的分类层级结构
-     *
-     * @return mixed
-     */
-     public function brandCateCombine()
-     {
-        $data = $this->productBrandRepository->brandCateCombine();
-        return $this->response->send($data);
-     }
 
 }
