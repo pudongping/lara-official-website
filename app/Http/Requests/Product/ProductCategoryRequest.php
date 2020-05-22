@@ -18,7 +18,15 @@ class ProductCategoryRequest extends Request
     {
         $rules = [
             'store' => [
-                'pid' => 'integer|min:0|exists:product_categories,id',
+                'pid' => [
+                    'integer',
+                    'min:0',
+                    Rule::exists('product_categories')->where(function ($query) {
+                        if ($this->pid) {
+                            $query->where('id', $this->pid);
+                        }
+                    }),
+                ],
                 'name' => 'required|string|max:255|min:2',
                 'description' => 'string|max:255',
                 'sort' => 'integer|min:0',
@@ -28,7 +36,15 @@ class ProductCategoryRequest extends Request
                 ]
             ],
             'update' => [
-                'pid' => 'integer|min:0|exists:product_categories,id',
+                'pid' => [
+                    'integer',
+                    'min:0',
+                    Rule::exists('product_categories')->where(function ($query) {
+                        if ($this->pid) {
+                            $query->where('id', $this->pid);
+                        }
+                    }),
+                ],
                 'name' => 'required|string|max:255|min:2',
                 'description' => 'string|max:255',
                 'sort' => 'integer|min:0',
