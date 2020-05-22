@@ -39,7 +39,21 @@ class ImageRepository extends BaseRepository
         $user = $request->user();
         $size = 'avatar' == $request->type ? 416 : 1024;
         $types = \Str::plural($request->type);  // 单词转成复数形式
-        $result = $this->imageUploadHandler->save($request->image, $types, $user->id, 'image', $size);
+
+        if ('base64' == $request->type) {
+            $folderName = "uploads/images/{$types}/" . date("Ym/d", time());
+            // 文件具体存储的物理路径，`public_path()` 获取的是 `public` 文件夹的物理路径。
+            // 值如：/home/vagrant/Code/larablog/public/uploads/images/avatars/201709/21/
+            $uploadPath = public_path() . '/' . $folderName;
+            mkdirs($uploadPath);
+            $filename = $user->id . '_' . time() . '_' . \Str::random(10) . '.png';
+            $base64ImageContent = $request->image;
+            img_base64_decode($base64ImageContent, $uploadPath . '/' . $filename);
+            $result['relativePath'] = $folderName . '/' . $filename;
+        } else {
+            $result = $this->imageUploadHandler->save($request->image, $types, $user->id, 'image', $size);
+        }
+
         $guard = \Auth::getDefaultDriver() ?? 'admin';  // 获取默认的守卫名称
 
         $input = [

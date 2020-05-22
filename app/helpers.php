@@ -295,3 +295,44 @@ if (! function_exists('str_explode')) {
         return array_filter(explode($delimiter, trim($str, $delimiter)));
     }
 }
+
+if (! function_exists('mkdirs')) {
+    /**
+     * 创建文件夹
+     *
+     * @param $dir  文件夹目录
+     * @param int $mode  权限模式
+     * @return bool
+     */
+    function mkdirs($dir, $mode = 0777)
+    {
+        if (!is_dir($dir)) {
+            mkdirs(dirname($dir), $mode);
+            return mkdir($dir, $mode);
+        }
+        return true;
+    }
+}
+
+if (! function_exists('img_base64_decode')) {
+    /**
+     * 图片 base64 解码并生成图片文件保存
+     *
+     * @param $base64ImageStr  图片 base64 数据
+     * @param string $savePath  图片保存的地址
+     * @return bool
+     */
+    function img_base64_decode($base64ImageStr, $savePath = '')
+    {
+        if (empty($base64ImageStr)) return false;
+        if (empty($savePath)) return false;
+        $match = preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64ImageStr, $result);
+        if (! $match) return false;
+        $base64Image = str_replace($result[1], '', $base64ImageStr);  // 去除掉 「data:image/png;base64,」 前缀
+        $fileContent = base64_decode($base64Image);  // 解析图片流
+        $fileExt = $result[2];  // 原始图片的后缀名，比如：png
+//        $filePath = $savePath . $fileExt;  // 文件保存路径和文件后缀名拼接
+        file_put_contents($savePath, $fileContent);
+        return true;
+    }
+}

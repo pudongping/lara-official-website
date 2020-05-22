@@ -21,6 +21,8 @@ class ImageRequest extends Request
 
         if ($this->type == 'avatar') {
             $rules['store']['image'] = 'required|mimes:jpeg,bmp,png,gif|dimensions:min_width=200,min_height=200';
+        } elseif ($this->type == 'base64') {
+          $rules['store']['image'] = 'required';
         } else {
             $rules['store']['image'] = 'required|mimes:jpeg,bmp,png,gif';
         }
