@@ -49,7 +49,7 @@ class ImageRepository extends BaseRepository
             $filename = $user->id . '_' . time() . '_' . \Str::random(10) . '.png';
             $base64ImageContent = $request->image;
             img_base64_decode($base64ImageContent, $uploadPath . '/' . $filename);
-            $result['relativePath'] = $folderName . '/' . $filename;
+            $result['relativePath'] = '/' . $folderName . '/' . $filename;
         } else {
             $result = $this->imageUploadHandler->save($request->image, $types, $user->id, 'image', $size);
         }
