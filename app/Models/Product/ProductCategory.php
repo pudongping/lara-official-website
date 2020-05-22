@@ -14,7 +14,7 @@ use App\Models\Model;
 
 class ProductCategory extends Model
 {
-    protected $fillable = ['pid', 'name', 'description', 'sort', 'status', 'level', 'path'];
+    protected $fillable = ['pid', 'name', 'description', 'sort', 'status', 'level', 'path', 'img'];
 
     const STATUS_ENABLE = 1;
     const STATUS_UNABLE = 0;

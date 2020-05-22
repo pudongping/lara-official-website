@@ -69,7 +69,7 @@ class ProductBrandRepository extends BaseRepository
      */
     public function allBrands()
     {
-        return $this->model->select(['id', 'name', 'description', 'log_url'])->allowStatus()->get()->toArray();
+        return $this->model->select(['id', 'name', 'description', 'log_url', 'img'])->allowStatus()->get()->toArray();
     }
 
     /**
@@ -81,7 +81,7 @@ class ProductBrandRepository extends BaseRepository
      */
     public function storage($request)
     {
-        $input = $request->only('name', 'description', 'status', 'sort');
+        $input = $request->only('name', 'description', 'log_url', 'status', 'sort', 'img');
         $brand = $this->store($input);
         return $brand;
     }
@@ -95,7 +95,7 @@ class ProductBrandRepository extends BaseRepository
      */
     public function modify($request)
     {
-        $input = $request->only('name', 'description', 'status', 'sort');
+        $input = $request->only('name', 'description', 'log_url', 'status', 'sort', 'img');
         $brand = $this->update($request->brand->id, $input);
         return $brand;
     }

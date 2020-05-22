@@ -38,6 +38,7 @@ class ProductCategoryTransformer extends BaseTransformer
             'level' => $resource->level,
             'path' => $resource->path,
             'path_ids' => $resource->path_ids,
+            'img' => $resource->img,
             'created_at' => $resource->created_at->format('Y-m-d H:i:s'),
             'updated_at' => $resource->updated_at->format('Y-m-d H:i:s'),
         ];

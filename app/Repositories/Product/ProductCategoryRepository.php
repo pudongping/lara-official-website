@@ -28,7 +28,7 @@ class ProductCategoryRepository extends BaseRepository
     {
         $search = $request->input('s');
         $fields = [
-            'id', 'pid', 'name', 'description', 'sort', 'status', 'level', 'created_at', 'updated_at', 'id as value', 'name as label'
+            'id', 'pid', 'name', 'description', 'sort', 'status', 'level', 'created_at', 'updated_at', 'id as value', 'name as label', 'img'
         ];
         $model = $this->model->select($fields);
         $model = $model->where(function ($query) use ($search) {
@@ -74,7 +74,7 @@ class ProductCategoryRepository extends BaseRepository
      */
     public function storage($request)
     {
-        $input = $request->only(['pid', 'name', 'description', 'sort', 'status']);
+        $input = $request->only(['pid', 'name', 'description', 'sort', 'status', 'img']);
         return $this->store($input);
     }
 
@@ -86,7 +86,7 @@ class ProductCategoryRepository extends BaseRepository
      */
     public function modify($request)
     {
-        $input = $request->only(['pid', 'name', 'description', 'sort', 'status']);
+        $input = $request->only(['pid', 'name', 'description', 'sort', 'status', 'img']);
         if ($request->category->id == $request->pid) {
             Code::setCode(Code::ERR_PARAMS, '不可以将自身添加成父级类目');
             return false;

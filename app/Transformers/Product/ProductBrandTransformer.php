@@ -36,6 +36,8 @@ class ProductBrandTransformer extends BaseTransformer
             'description' => $resource->description,
             'sort' => $resource->sort,
             'status' => $resource->status,
+            'log_url' => $resource->log_url,
+            'img' => $resource->img,
             'created_at' => (string)$resource->created_at,
             'updated_at' => (string)$resource->updated_at,
 

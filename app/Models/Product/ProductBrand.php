@@ -15,7 +15,7 @@ use App\Models\Model;
 class ProductBrand extends Model
 {
 
-    protected $fillable = ['name', 'description', 'log_url', 'sort', 'status'];
+    protected $fillable = ['name', 'description', 'log_url', 'sort', 'status', 'img'];
 
     const STATUS_ENABLE = 1;
     const STATUS_UNABLE = 0;
@@ -24,17 +24,6 @@ class ProductBrand extends Model
         self::STATUS_ENABLE => '启用',
         self::STATUS_UNABLE => '禁用'
     ];
-    
-    /**
-     * log 地址获取器
-     *
-     * @param $value
-     * @return string
-     */
-    public function getLogUrlAttribute($value)
-    {
-        return img_with_base_url($value);
-    }
 
     /**
      * 只允许访问 「启用」状态的品牌
