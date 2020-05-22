@@ -20,10 +20,10 @@ class ProductSpuRequest extends Request
                 'brand_id' => 'required|integer|min:0|exists:product_brands,id',
                 'title' => 'required|string|max:255|min:2',
                 'unit' => 'required|string|max:255|min:1',
-                'sketch' => 'string|max:255',
-                'keywords' => 'string|max:255',
-                'tags' => 'string|max:255',
-                'barcode' => 'string|max:255',
+                'sketch' => 'nullable|string|max:255',
+                'keywords' => 'nullable|string|max:255',
+                'tags' => 'nullable|string|max:255',
+                'barcode' => 'nullable|string|max:255',
                 'market_price' => 'required|numeric|min:0',
                 'rating' => 'integer|min:0|max:5',
                 'virtual_retail_num' => 'integer|min:0',
@@ -32,7 +32,7 @@ class ProductSpuRequest extends Request
                 'slider_image' => 'required|array',
                 'status' => 'integer|min:0',
                 'sort' => 'integer|min:0',
-                'description' => 'string',
+                'description' => 'nullable|string',
             ],
             'update' => [
                 'category_ids' => 'required|array',
@@ -51,10 +51,10 @@ class ProductSpuRequest extends Request
                 'slider_image' => 'required|array',
                 'status' => 'integer|min:0',
                 'sort' => 'integer|min:0',
-                'description' => 'string',
+                'description' => 'nullable|string',
             ],
             'modifyDescription' => [
-                'description' => 'string',
+                'description' => 'nullable|string',
             ],
         ];
 
