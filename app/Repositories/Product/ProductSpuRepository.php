@@ -383,6 +383,9 @@ class ProductSpuRepository extends BaseRepository
                                     if (isset($v['opt_sort'][$kkk])) {  // 更新属性值排序
                                         $this->productAttributeOptionModel->where('id', $currentAttrOptId)->update(['sort' => intval($v['opt_sort'][$kkk])]);
                                     }
+                                    if (isset($v['opt_img'][$kkk])) {  // 更新属性缩略图
+                                        $this->productAttributeOptionModel->where('id', $currentAttrOptId)->update(['img' => strval($v['opt_img'][$kkk])]);
+                                    }
                                     // 如果当前提交的属性选项已经在数据库中存在，则移除掉「当前提交的且在数据库中同时存在的」同名属性选项
                                     // 剩下的就是只在数据库中存在，但是非提交的属性选项值（需要删除）
                                     unset($attrOpts[$currentAttrId][$vvv]);
@@ -392,6 +395,9 @@ class ProductSpuRepository extends BaseRepository
                                         $optInput = [];
                                         if (isset($v['opt_sort'][$kkk])) {
                                             $optInput['sort'] = (int)$v['opt_sort'][$kkk];  // 属性选项排序
+                                        }
+                                        if (isset($v['opt_img'][$kkk])) {
+                                            $optInput['img'] = (string)$v['opt_img'][$kkk];  // 属性选项缩略图
                                         }
                                         $optInput['attribute_id'] = $currentAttrId;
                                         $optInput['name'] = $vvv;  // 提交的属性选项值
@@ -415,6 +421,9 @@ class ProductSpuRepository extends BaseRepository
                             foreach ($v['options'] as $kk => $vv) {
                                 if (isset($v['opt_sort'][$kk])) {
                                     $optionInput['sort'] = (int)$v['opt_sort'][$kk];  // 属性选项排序
+                                }
+                                if (isset($v['opt_img'][$kk])) {
+                                    $optionInput['img'] = (string)$v['opt_img'][$kk];  // 属性选项缩略图
                                 }
                                 $optionInput['attribute_id'] = $attrRes->id;  // 当前的属性 id
                                 if (! empty(trim($vv))) {  // 只有属性选项值不为空的属性选项，才会插入数据库
