@@ -10,7 +10,7 @@ class ProductAttributeOption extends Model
 
     use SoftDeletes;
 
-    protected $fillable = ['attribute_id', 'name', 'sort'];
+    protected $fillable = ['attribute_id', 'name', 'sort', 'img'];
 
     /**
      * 排序-本地作用域

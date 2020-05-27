@@ -173,7 +173,7 @@ class ProductSpuRepository extends BaseRepository
         $attrs = $request->spu->attrs()->dataSort()->pluck('name', 'id')->toArray();  // 商品所有的属性
         // 商品所有的属性选项值
         $attrOptions = $this->productAttributeOptionModel
-            ->select('id', 'attribute_id', 'name')
+            ->select('id', 'attribute_id', 'name', 'sort', 'img')
             ->whereIn('attribute_id', array_keys($attrs))
             ->dataSort()
             ->get()
@@ -211,11 +211,17 @@ class ProductSpuRepository extends BaseRepository
             $itemData['attr'] = $attr;  // 单个属性值
             if (isset($attrOptions[$key])) {  // 避免出现有属性选项没有属性值的情况
                 $optionItem = [];
+                $optionImg = [];
+                $optionSort = [];
                 foreach ($attrOptions[$key] as $k => $option) {
                     $optionItem[] = $option['name'];  // 单个属性选项值
+                    $optionImg[] = (string)$option['img'];  // 单个属性选项缩略图
+                    $optionSort[] = $option['sort'];  // 单个属性选项排序
                     $attrOptionKey[$key][$k] = $attr . '_' . $key . '|' . $option['name'] . '_' . $option['id'];
                 }
                 $itemData['options'] = $optionItem;
+                $itemData['opt_img'] = $optionImg;
+                $itemData['opt_sort'] = $optionSort;
             }
             $dataAttrs[] = $itemData;
         }
