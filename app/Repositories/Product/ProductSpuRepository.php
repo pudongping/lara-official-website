@@ -79,6 +79,10 @@ class ProductSpuRepository extends BaseRepository
             $model = $model->where('brand_id', intval($request->brand_id));
         }
 
+        if (!is_null($request->status)) {
+            $model = $model->where('status', intval($request->status));
+        }
+
         $model = $model->with('categories', 'brand');
 
         return $this->usePage($model);
