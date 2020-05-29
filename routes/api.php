@@ -55,6 +55,7 @@ Route::group([
         // =======================系统相关=========================
         Route::get('clearCache', 'Setting\SettingsController@clearCache')->name('settings.clearCache');  // 清空所有缓存
         Route::resource('menus', 'Setting\MenusController')->except(['create', 'show']);  // 菜单
+        Route::resource('banners', 'Setting\BannersController')->only(['index', 'store', 'update', 'destroy']);  // banner 图
 
         // =======================工具相关=========================
         Route::post('images', 'Common\ImagesController@store')->name('images.store');  // 上传图片
