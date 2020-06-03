@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Product;
 
 use App\Http\Requests\Request;
+use App\Models\Product\ProductSpu;
 
 class ProductSpuRequest extends Request
 {
@@ -56,6 +57,17 @@ class ProductSpuRequest extends Request
             'modifyDescription' => [
                 'description' => 'nullable|string',
             ],
+            'addHost' => [
+                'spu_ids' => 'required|array',
+                'spu_ids.*' => [
+                    'required',
+                    function ($attribute, $value, $fail) {
+                        if (!$spu = ProductSpu::find($value)) {
+                            return $fail('该商品不存在');
+                        }
+                    }
+                ],
+            ],
         ];
 
         return $this->useRule($rules);
@@ -81,6 +93,7 @@ class ProductSpuRequest extends Request
             'status' => '状态',
             'sort' => '排序编号',
             'description' => '商品描述',
+            'spu_ids' => '商品id',
         ];
     }
 
@@ -91,6 +104,7 @@ class ProductSpuRequest extends Request
             'price.numeric' => '商品价格必须为数字',
             'market_price.numeric' => '商品市场价格必须为数字',
             'slider_image.array' => '提交的轮播图数据格式错误',
+            'spu_ids.array' => '提交的商品 id 数据格式错误',
         ];
 
         $messages = array_merge(parent::messages(), $messages);

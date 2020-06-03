@@ -21,8 +21,9 @@ class ProductSpu extends Model
     protected $fillable = [
         'category_ids', 'brand_id', 'title', 'unit', 'sketch',
         'keywords', 'tags', 'barcode', 'price', 'market_price',
-        'rating', 'sold_count', 'review_count', 'virtual_retail_num', 'description',
-        'stock', 'warning_stock', 'main_image', 'slider_image', 'status', 'sort'
+        'rating', 'sold_count', 'review_count', 'virtual_retail_num',
+        'description', 'stock', 'warning_stock', 'main_image',
+        'slider_image', 'status', 'sort', 'is_hot'
     ];
 
     const STATUS_UN_PUTWAY = 1;
@@ -30,11 +31,19 @@ class ProductSpu extends Model
     const STATUS_SOLD_OUT = 3;
     const STATUS_PRE_SALE = 4;
 
+    const HOT_NO = 0;
+    const HOT_YES = 1;
+
     public static $statusMsg = [
         self::STATUS_UN_PUTWAY => '未上架',
         self::STATUS_PUTWAY => '上架',
         self::STATUS_SOLD_OUT => '下架',
         self::STATUS_PRE_SALE => '预售'
+    ];
+
+    public static $hostMsg = [
+        self::HOT_NO => '非爆款',
+        self::HOT_YES => '爆款',
     ];
 
     protected $casts = [

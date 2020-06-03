@@ -83,6 +83,11 @@ class ProductSpuRepository extends BaseRepository
             $model = $model->where('status', intval($request->status));
         }
 
+        // 是否热销商品
+        if (!is_null($request->is_hot)) {
+            $model = $model->where('is_hot', intval($request->is_hot));
+        }
+
         $model = $model->with('categories', 'brand');
 
         return $this->usePage($model);
@@ -593,6 +598,17 @@ class ProductSpuRepository extends BaseRepository
             $data[$k]['ids'] = $pasoData;
         }
         return $data;
+    }
+
+    /**
+     * 添加热销商品
+     *
+     * @param $request
+     * @return mixed
+     */
+    public function addHost($request)
+    {
+        return $this->model->whereIn('id', $request->spu_ids)->update(['is_hot' => ProductSpu::HOT_YES]);
     }
 
 }

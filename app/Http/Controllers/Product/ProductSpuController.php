@@ -142,4 +142,16 @@ class ProductSpuController extends Controller
         return $this->response->send($data);
     }
 
+    /**
+     * 添加热销商品
+     *
+     * @param ProductSpuRequest $request
+     * @return mixed
+     */
+    public function addHost(ProductSpuRequest $request)
+    {
+        $this->productSpuRepository->addHost($request);
+        return $this->response->send();
+    }
+
 }
