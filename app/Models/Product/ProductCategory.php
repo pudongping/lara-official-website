@@ -14,14 +14,22 @@ use App\Models\Model;
 
 class ProductCategory extends Model
 {
-    protected $fillable = ['pid', 'name', 'description', 'sort', 'status', 'level', 'path', 'img'];
+    protected $fillable = ['pid', 'name', 'description', 'sort', 'status', 'level', 'path', 'img', 'is_index_show'];
 
     const STATUS_ENABLE = 1;
     const STATUS_UNABLE = 0;
 
+    const INDEX_SHOW_NO = 0;
+    const INDEX_SHOW_YES = 1;
+
     public static $statusMsg = [
         self::STATUS_ENABLE => '启用',
         self::STATUS_UNABLE => '禁用'
+    ];
+
+    public static $indexShowMsg = [
+        self::INDEX_SHOW_NO => '不在首页显示',
+        self::INDEX_SHOW_YES => '在首页显示'
     ];
 
     protected $hidden = ['pivot'];
