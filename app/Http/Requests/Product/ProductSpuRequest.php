@@ -62,8 +62,8 @@ class ProductSpuRequest extends Request
                 'spu_ids.*' => [
                     'required',
                     function ($attribute, $value, $fail) {
-                        if (!$spu = ProductSpu::find($value)) {
-                            return $fail('该商品不存在');
+                        if (!$spu = ProductSpu::where('status', ProductSpu::STATUS_PUTWAY)->find($value)) {
+                            return $fail('该商品不存在或者未上架');
                         }
                     }
                 ],

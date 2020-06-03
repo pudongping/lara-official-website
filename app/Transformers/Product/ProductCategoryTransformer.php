@@ -35,6 +35,7 @@ class ProductCategoryTransformer extends BaseTransformer
             'description' => $resource->description,
             'sort' => $resource->sort,
             'status' => $resource->status,
+            'is_index_show' => $resource->is_index_show,
             'level' => $resource->level,
             'path' => $resource->path,
             'path_ids' => $resource->path_ids,

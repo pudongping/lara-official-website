@@ -58,8 +58,8 @@ class ProductCategoryRequest extends Request
                 'cate_ids.*' => [
                     'required',
                     function ($attribute, $value, $fail) {
-                        if (!$cate = ProductCategory::find($value)) {
-                            return $fail('该分类不存在');
+                        if (!$cate = ProductCategory::where('status', ProductCategory::STATUS_ENABLE)->find($value)) {
+                            return $fail('该分类不存在或者未开启');
                         }
                     }
                 ],
