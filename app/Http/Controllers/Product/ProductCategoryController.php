@@ -80,4 +80,28 @@ class ProductCategoryController extends Controller
         return $this->response->send();
     }
 
+    /**
+     *  通过分类级别查询分类
+     *
+     * @param Request $request
+     * @return mixed
+     */
+    public function fetchByLevel(Request $request)
+    {
+        $data = $this->productCategoryRepository->fetchByLevel($request);
+        return $this->response->send($data);
+    }
+
+    /**
+     * 改变分类是否首页显示
+     *
+     * @param ProductCategoryRequest $request
+     * @return mixed
+     */
+    public function changeIndexShow(ProductCategoryRequest $request)
+    {
+        $this->productCategoryRepository->changeIndexShow($request);
+        return $this->response->send();
+    }
+
 }

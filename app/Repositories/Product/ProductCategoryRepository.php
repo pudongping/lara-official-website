@@ -105,5 +105,34 @@ class ProductCategoryRepository extends BaseRepository
        return $this->model->whereIn('id', $cateIds)->pluck('id')->toArray();
     }
 
+    /**
+     * 通过分类级别查询分类
+     *
+     * @param $request
+     * @return mixed
+     */
+    public function fetchByLevel($request)
+    {
+        $level = 0;
+        if (!is_null($request->level)) {
+            $level = $request->level;
+        }
+
+        $model = $this->model->where('level', $level)->allowStatus();
+
+        return $this->usePage($model);
+    }
+
+    /**
+     * 改变分类是否首页显示
+     *
+     * @param $request
+     * @return mixed
+     */
+    public function changeIndexShow($request)
+    {
+        return $this->model->whereIn('id', $request->cate_ids)->update(['is_index_show' => $request->is_index_show]);
+    }
+
 
 }

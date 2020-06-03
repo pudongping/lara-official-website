@@ -53,6 +53,18 @@ class ProductCategoryRequest extends Request
                     Rule::in(array_keys(ProductCategory::$statusMsg))
                 ],
             ],
+            'changeIndexShow' => [
+                'cate_ids' => 'required|array',
+                'cate_ids.*' => [
+                    'required',
+                    function ($attribute, $value, $fail) {
+                        if (!$cate = ProductCategory::find($value)) {
+                            return $fail('该分类不存在');
+                        }
+                    }
+                ],
+                'is_index_show' => 'required|integer',
+            ],
         ];
 
         return $this->useRule($rules);

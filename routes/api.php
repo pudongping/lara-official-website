@@ -68,6 +68,8 @@ Route::group([
             Route::get('categories/{category}/edit', 'Product\ProductCategoryController@edit')->name('product.categories.edit');  // 编辑显示类目
             Route::patch('categories/{category}', 'Product\ProductCategoryController@update')->name('product.categories.update');  // 编辑类目-数据提交
             Route::delete('categories/{category}', 'Product\ProductCategoryController@destroy')->name('product.categories.destroy');   // 删除类目
+            Route::get('categories/fetchByLevel', 'Product\ProductCategoryController@fetchByLevel')->name('product.categories.fetchByLevel');  // 获取指定层级的分类数据
+            Route::post('categories/changeIndexShow', 'Product\ProductCategoryController@changeIndexShow')->name('product.categories.changeIndexShow');  // 改变分类是否显示在首页
 
             Route::get('brands', 'Product\ProductBrandController@index')->name('product.brands.index');  // 商品品牌列表
             Route::post('brands', 'Product\ProductBrandController@store')->name('product.brands.store');   // 新建品牌
