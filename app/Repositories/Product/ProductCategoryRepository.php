@@ -131,6 +131,11 @@ class ProductCategoryRepository extends BaseRepository
      */
     public function changeIndexShow($request)
     {
+        $hasIsIndexShow = $this->model->where('is_index_show', ProductCategory::INDEX_SHOW_YES)->count();
+        if ($hasIsIndexShow >= config('api.other.category_show_index_count')) {
+            Code::setCode(Code::ERR_PARAMS, '在首页显示的分类数超过限制');
+            return false;
+        }
         return $this->model->whereIn('id', $request->cate_ids)->update(['is_index_show' => $request->is_index_show]);
     }
 
