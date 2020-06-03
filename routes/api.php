@@ -84,7 +84,7 @@ Route::group([
             Route::get('spus/{spu}/getSkusTemplate', 'Product\ProductSpuController@getSkusTemplate')->name('product.spus.getSkusTemplate');  // 获取 sku 数据模板
             Route::post('spus/{spu}/attrOptUpdate', 'Product\ProductSpuController@attrOptStoreOrUpdate')->name('product.spus.attrOptStoreOrUpdate');  // 添加 「属性-属性选项值」 或者 更新 「属性-属性选项值」
             Route::post('spus/{spu}/skus', 'Product\ProductSpuController@skuStoreOrUpdate')->name('product.spus.skuStoreOrUpdate');  // 添加 sku 数据 或者 更新 sku 数据
-            Route::post('spus/addHots', 'Product\ProductSpuController@addHost')->name('product.spus.addHost');  // 添加爆款商品
+            Route::post('spus/changeHot', 'Product\ProductSpuController@changeHot')->name('product.spus.changeHot');  // 改变商品是否为爆款
         });
 
     });

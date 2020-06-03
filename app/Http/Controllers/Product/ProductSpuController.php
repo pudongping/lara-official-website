@@ -148,9 +148,9 @@ class ProductSpuController extends Controller
      * @param ProductSpuRequest $request
      * @return mixed
      */
-    public function addHost(ProductSpuRequest $request)
+    public function changeHot(ProductSpuRequest $request)
     {
-        $this->productSpuRepository->addHost($request);
+        $this->productSpuRepository->changeHot($request);
         return $this->response->send();
     }
 

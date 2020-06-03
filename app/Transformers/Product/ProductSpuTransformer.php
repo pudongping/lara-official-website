@@ -48,6 +48,7 @@ class ProductSpuTransformer extends BaseTransformer
             'slider_image' => $resource->slider_image,
             'description' => (string)$resource->description,
             'status' => $resource->status,
+            'is_hot' => $resource->is_hot,
             'sort' => $resource->sort,
             'categories' => $resource->categories,
             'brand' => $resource->brand,

@@ -57,7 +57,7 @@ class ProductSpuRequest extends Request
             'modifyDescription' => [
                 'description' => 'nullable|string',
             ],
-            'addHost' => [
+            'changeHot' => [
                 'spu_ids' => 'required|array',
                 'spu_ids.*' => [
                     'required',
@@ -67,6 +67,7 @@ class ProductSpuRequest extends Request
                         }
                     }
                 ],
+                'is_hot' => 'required|integer',
             ],
         ];
 
@@ -94,6 +95,7 @@ class ProductSpuRequest extends Request
             'sort' => '排序编号',
             'description' => '商品描述',
             'spu_ids' => '商品id',
+            'is_hot' => '爆款状态'
         ];
     }
 

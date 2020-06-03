@@ -606,9 +606,9 @@ class ProductSpuRepository extends BaseRepository
      * @param $request
      * @return mixed
      */
-    public function addHost($request)
+    public function changeHot($request)
     {
-        return $this->model->whereIn('id', $request->spu_ids)->update(['is_hot' => ProductSpu::HOT_YES]);
+        return $this->model->whereIn('id', $request->spu_ids)->update(['is_hot' => $request->is_hot]);
     }
 
 }
