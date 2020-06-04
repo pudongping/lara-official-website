@@ -28,7 +28,7 @@ class ProductCategoryRepository extends BaseRepository
     {
         $search = $request->input('s');
         $fields = [
-            'id', 'pid', 'name', 'description', 'sort', 'status', 'level', 'created_at', 'updated_at', 'id as value', 'name as label', 'img'
+            'id', 'pid', 'name', 'description', 'sort', 'status', 'level', 'created_at', 'updated_at', 'id as value', 'name as label', 'img', 'path'
         ];
         $model = $this->model->select($fields);
         $model = $model->where(function ($query) use ($search) {
