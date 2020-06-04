@@ -21,11 +21,11 @@ class ProductCategoryRequest extends Request
                 'pid' => [
                     'integer',
                     'min:0',
-                    Rule::exists('product_categories')->where(function ($query) {
-                        if ($this->pid) {
-                            $query->where('id', $this->pid);
+                    function ($attribute, $value, $fail) {
+                        if ($value && !$count = ProductCategory::where('id', $value)->count()) {
+                            return $fail('当前所选父级类目不存在');
                         }
-                    }),
+                    },
                 ],
                 'name' => 'required|string|max:255|min:2',
                 'description' => 'string|max:255',
@@ -39,11 +39,11 @@ class ProductCategoryRequest extends Request
                 'pid' => [
                     'integer',
                     'min:0',
-                    Rule::exists('product_categories')->where(function ($query) {
-                        if ($this->pid) {
-                            $query->where('id', $this->pid);
+                    function ($attribute, $value, $fail) {
+                        if ($value && !$count = ProductCategory::where('id', $value)->count()) {
+                            return $fail('当前所选父级类目不存在');
                         }
-                    }),
+                    },
                 ],
                 'name' => 'required|string|max:255|min:2',
                 'description' => 'string|max:255',
