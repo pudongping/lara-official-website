@@ -15,7 +15,7 @@ class AddNicknameSexToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('nickname')->after('avatar')->nullable()->comment('昵称');
-            $table->tinyInteger('sex')->after('nickname')->nullable()->comment('性别');
+            $table->tinyInteger('sex')->after('nickname')->default(0)->comment('性别');
         });
     }
 
