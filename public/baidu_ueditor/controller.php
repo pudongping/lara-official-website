@@ -6,7 +6,7 @@ error_reporting(E_ERROR);
 header("Content-Type: text/html; charset=utf-8");
 
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers: Origin, Content-Type, Cookie, X-CSRF-TOKEN, Accept, Authorization, X-XSRF-TOKEN, token');
+header('Access-Control-Allow-Headers: Origin, Content-Type, Cookie, X-CSRF-TOKEN, Accept, Authorization, X-XSRF-TOKEN, token, X-Requested-With');
 header('Access-Control-Expose-Headers: Authorization, authenticated');
 header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Credentials: false');
