@@ -16,7 +16,7 @@ class ProductSpuObserver
     public function saving(ProductSpu $productSpu)
     {
         // 修复 XSS 注入漏洞
-        $productSpu->description = clean($productSpu->description, 'spu_description');
+//        $productSpu->description = clean($productSpu->description, 'spu_description');
     }
 
 }
