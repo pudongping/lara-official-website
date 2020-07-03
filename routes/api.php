@@ -19,7 +19,8 @@
 */
 Route::group([
     'middleware' => ['throttle:' . config('api.rate_limits.sign')],  // 1分钟/10次
-    'as' => 'admin.'
+    'as' => 'admin.',
+    'prefix' => 'admin'
 ], function () {
     // 用户名/邮箱/手机号/登录
     Route::post('authorizations', 'Auth\AdminsController@login')->name('authorizations.login');
@@ -27,7 +28,8 @@ Route::group([
 
 Route::group([
     'middleware' => ['throttle:' . config('api.rate_limits.access')],  // 1分钟/60次
-    'as' => 'admin.'
+    'as' => 'admin.',
+    'prefix' => 'admin'
 ], function () {
     // 登录之后才允许访问
     Route::group(['middleware' => ['auth:admin', 'check_admin_menus']], function () {
@@ -44,7 +46,7 @@ Route::group([
             Route::delete('/users/{user}', 'Auth\AdminsController@destroy')->name('users.destroy');  // 删除用户
             Route::get('logs', 'Setting\LogsController@index')->name('logs.index');  // 操作日志列表
             Route::get('settings', 'Setting\SettingsController@index')->name('settings.index');  // 站点设置
-            Route::put('settings/update', 'Setting\SettingsController@update')->name('settings.update');  // 更新站点设置
+            Route::put('settings/update/{setting}', 'Setting\SettingsController@update')->name('settings.update');  // 更新站点设置
         });
 
         Route::get('user', 'Auth\AdminsController@me')->name('user.show');  // 当前登录用户信息
@@ -59,7 +61,6 @@ Route::group([
 
         // =======================工具相关=========================
         Route::post('images', 'Common\ImagesController@store')->name('images.store');  // 上传图片
-        Route::get('prizes/probably', 'Common\PrizesController@probably')->name('prizes.probably');  // 抽奖概率测试
 
     });
 });

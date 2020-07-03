@@ -12,7 +12,7 @@ class GenerateToken extends Command
      *
      * @var string
      */
-    protected $signature = 'larashop:generate-token';
+    protected $signature = 'lara-office-website:generate-token';
 
     /**
      * The console command description.
