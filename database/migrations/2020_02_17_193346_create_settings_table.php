@@ -16,11 +16,16 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('key', 150)->unique()->comment('设置指标唯一的 key，比如：site_name');
-            $table->text('value')->nullable()->comment('指标值，比如：我的个人网站');
-            $table->string('name', 150)->nullable()->comment('指标名称，比如：站点名称');
-            $table->string('content', 255)->nullable()->comment('备注信息');
-            $table->integer('sort')->default(0)->comment('排序编号');
+            $table->string('contact_name', 150)->nullable()->comment('联系人姓名');
+            $table->string('contact_phone', 150)->nullable()->comment('联系人电话');
+            $table->string('contact_email', 150)->nullable()->comment('联系人邮箱');
+            $table->string('contact_address')->nullable()->comment('联系人地址');
+            $table->string('copy_right')->nullable()->comment('版权信息');
+            $table->string('record_n_varchar')->nullable()->comment('备案号');
+            $table->string('seo_description')->nullable()->comment('seo 描述信息');
+            $table->string('seo_keyword')->nullable()->comment('seo 关键词');
+            $table->string('site_name')->nullable()->comment('站点名称');
+            $table->string('website')->nullable()->comment('网站地址');
             $table->timestamps();
         });
         DB::statement("ALTER TABLE `settings` COMMENT='站点设置表'");

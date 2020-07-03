@@ -61,33 +61,5 @@ Route::group([
         Route::post('images', 'Common\ImagesController@store')->name('images.store');  // 上传图片
         Route::get('prizes/probably', 'Common\PrizesController@probably')->name('prizes.probably');  // 抽奖概率测试
 
-        // =======================商品相关=========================
-        Route::group(['prefix' => 'product'], function () {
-            Route::get('categories', 'Product\ProductCategoryController@index')->name('product.categories.index');  // 商品类目列表
-            Route::post('categories', 'Product\ProductCategoryController@store')->name('product.categories.store');  // 新建类目
-            Route::get('categories/{category}/edit', 'Product\ProductCategoryController@edit')->name('product.categories.edit');  // 编辑显示类目
-            Route::patch('categories/{category}', 'Product\ProductCategoryController@update')->name('product.categories.update');  // 编辑类目-数据提交
-            Route::delete('categories/{category}', 'Product\ProductCategoryController@destroy')->name('product.categories.destroy');   // 删除类目
-            Route::get('categories/fetchByLevel', 'Product\ProductCategoryController@fetchByLevel')->name('product.categories.fetchByLevel');  // 获取指定层级的分类数据
-            Route::post('categories/changeIndexShow', 'Product\ProductCategoryController@changeIndexShow')->name('product.categories.changeIndexShow');  // 改变分类是否显示在首页
-
-            Route::get('brands', 'Product\ProductBrandController@index')->name('product.brands.index');  // 商品品牌列表
-            Route::post('brands', 'Product\ProductBrandController@store')->name('product.brands.store');   // 新建品牌
-            Route::get('brands/{brand}/edit', 'Product\ProductBrandController@edit')->name('product.brands.edit');  // 编辑显示类目
-            Route::patch('brands/{brand}', 'Product\ProductBrandController@update')->name('product.brands.update');  // 编辑品牌数据提交
-            Route::delete('brands/{brand}', 'Product\ProductBrandController@destroy')->name('product.brands.destroy');  // 删除品牌
-
-            Route::get('spus', 'Product\ProductSpuController@index')->name('product.spus.index');  // 商品列表
-            Route::post('spus', 'Product\ProductSpuController@store')->name('product.spus.store');  // 添加主商品
-            Route::get('spus/{spu}/edit', 'Product\ProductSpuController@edit')->name('product.spus.edit');  // 编辑显示主商品
-            Route::patch('spus/{spu}', 'Product\ProductSpuController@update')->name('product.spus.update');  // 编辑主商品数据提交
-            Route::get('spus/{spu}', 'Product\ProductSpuController@show')->name('product.spus.show');  // 商品详情
-            Route::put('spus/{spu}/description', 'Product\ProductSpuController@modifyDescription')->name('product.spus.modifyDescription');  // 商品更新描述信息
-            Route::get('spus/{spu}/getSkusTemplate', 'Product\ProductSpuController@getSkusTemplate')->name('product.spus.getSkusTemplate');  // 获取 sku 数据模板
-            Route::post('spus/{spu}/attrOptUpdate', 'Product\ProductSpuController@attrOptStoreOrUpdate')->name('product.spus.attrOptStoreOrUpdate');  // 添加 「属性-属性选项值」 或者 更新 「属性-属性选项值」
-            Route::post('spus/{spu}/skus', 'Product\ProductSpuController@skuStoreOrUpdate')->name('product.spus.skuStoreOrUpdate');  // 添加 sku 数据 或者 更新 sku 数据
-            Route::post('spus/changeHot', 'Product\ProductSpuController@changeHot')->name('product.spus.changeHot');  // 改变商品是否为爆款
-        });
-
     });
 });
