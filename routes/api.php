@@ -67,7 +67,7 @@ Route::group([
         Route::post('articles', 'Article\ArticleController@store')->name('articles.store');  // 添加文章
         Route::patch('articles/{article}', 'Article\ArticleController@update')->name('articles.update');  // 更新文章
         Route::delete('articles/{article}', 'Article\ArticleController@destroy')->name('articles.destroy');  // 删除文章
-        Route::get('articles/{article}', 'Article\ArticleController@show')->name('articles.show');  // 删除文章
+        Route::get('articles/{article}', 'Article\ArticleController@show')->name('articles.show');  // 文章详情
         Route::get('articles', 'Article\ArticleController@index')->name('articles.index');  // 文章列表
 
     });
@@ -89,4 +89,5 @@ Route::group([
     Route::get('settings', 'Portal\SettingsController@index')->name('settings.index');  // 系统设置信息
     Route::post('partners', 'Portal\PartnerController@store')->name('partners.store');  // 洽谈合作
     Route::get('articles', 'Portal\ArticleController@index')->name('articles.index');  // 文章列表
+    Route::get('articles/{article}', 'Portal\ArticleController@show')->name('articles.show');  // 文章详情
 });
