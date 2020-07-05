@@ -58,9 +58,27 @@ Route::group([
         Route::get('clearCache', 'Setting\SettingsController@clearCache')->name('settings.clearCache');  // 清空所有缓存
         Route::resource('menus', 'Setting\MenusController')->except(['create', 'show']);  // 菜单
         Route::resource('banners', 'Setting\BannersController')->only(['index', 'store', 'update', 'destroy']);  // banner 图
+        Route::get('partners', 'Setting\PartnerController@index')->name('partners.index');  // 洽谈合作数据列表
 
         // =======================工具相关=========================
         Route::post('images', 'Common\ImagesController@store')->name('images.store');  // 上传图片
 
     });
+});
+
+
+
+/*
+|--------------------------------------------------------------------------
+| 门户相关
+|--------------------------------------------------------------------------
+|
+*/
+Route::group([
+    'middleware' => ['throttle:' . config('api.rate_limits.access')],  // 1分钟/60次
+    'as' => 'portal.'
+], function () {
+    Route::get('banners', 'Portal\BannersController@index')->name('banners.index');  // 门户 banner 列表
+    Route::get('settings', 'Portal\SettingsController@index')->name('settings.index');  // 系统设置信息
+    Route::post('partners', 'Portal\PartnerController@store')->name('partners.store');  // 洽谈合作
 });

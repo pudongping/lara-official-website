@@ -17,5 +17,9 @@ class Banner extends Model
 
     protected $fillable = ['title', 'img', 'status', 'jump_type', 'type', 'jump_url', 'sort'];
 
+    public function scopeAllowStatus($query)
+    {
+        return $query->where('status', self::STATUS_SHOW);
+    }
 
 }
