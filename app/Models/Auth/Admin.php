@@ -46,11 +46,6 @@ class Admin extends Authenticatable implements JWTSubject
         'password'
     ];
 
-    public function getAvatarAttribute($value)
-    {
-        return !empty($value) ? config('app.url') . $value : '';
-    }
-
     /**
      * JWTSubject 对象的接口用于获取当前用户的 id
      *

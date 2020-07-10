@@ -32,7 +32,11 @@ class AdminRequest extends Request
                     'unique:admins,phone,'.$currentUserId
                 ],
                 'roles' => 'array',
-                'avatar_image_id' => 'exists:images,id,type,avatar,guard_name,admin,user_id,'.$currentUserId,
+                'avatar_image_id' => [
+                    Rule::exists('images', 'id')->where(function ($query){
+                        $query->whereIn('type', ['avatar', 'base64']);
+                    }),
+                ],
                 'current_password' => 'required_with:new_password|string|min:6',
                 'new_password' => 'required_with:current_password|string|min:6|confirmed',  // new_password_confirmation
             ],
@@ -48,7 +52,7 @@ class AdminRequest extends Request
                 // images 表中 id 是否存在，type 是否为 avatar，守卫名称是否为 admin，用户 id 是否是当前登录的用户 id
                 'avatar_image_id' => [
                     Rule::exists('images', 'id')->where(function ($query) use ($userId) {
-                        $query->where('type', 'avatar')->where('guard_name', 'admin')->where('user_id', $userId);
+                        $query->whereIn('type', ['avatar', 'base64'])->where('guard_name', 'admin')->where('user_id', $userId);
                     }),
                 ],
                 'password' => ['required', 'string', 'min:6', 'confirmed'],  // password_confirmation
