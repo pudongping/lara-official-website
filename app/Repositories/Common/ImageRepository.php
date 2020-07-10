@@ -54,7 +54,7 @@ class ImageRepository extends BaseRepository
             $result = $this->imageUploadHandler->save($request->image, $types, $user->id, 'image', $size);
         }
 
-        $guard = \Auth::getDefaultDriver() ?? 'admin';  // 获取默认的守卫名称
+        $guard = \Auth::getDefaultDriver() ?? config('api.default_guard_name');  // 获取默认的守卫名称
 
         $input = [
             'user_id' => $user->id,

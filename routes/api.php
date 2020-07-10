@@ -62,6 +62,7 @@ Route::group([
 
         // =======================工具相关=========================
         Route::post('images', 'Common\ImagesController@store')->name('images.store');  // 上传图片
+        Route::post('files', 'Common\FilesController@store')->name('files.store');  // 上传文件
 
         // =======================文章相关=========================
         Route::post('articles', 'Article\ArticleController@store')->name('articles.store');  // 添加文章
