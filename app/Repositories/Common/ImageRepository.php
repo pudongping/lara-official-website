@@ -37,7 +37,12 @@ class ImageRepository extends BaseRepository
     public function storage($request)
     {
         $user = $request->user();
-        $size = 'avatar' == $request->type ? 416 : 1024;
+        if (in_array($request->type, config('api.no_reduce_size_img_type'))) {
+            // 不需要裁剪图片
+            $size = false;
+        } else {
+            $size = 'avatar' == $request->type ? 416 : 1024;
+        }
         $types = \Str::plural($request->type);  // 单词转成复数形式
 
         if ('base64' == $request->type) {
