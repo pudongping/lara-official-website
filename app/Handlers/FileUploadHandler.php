@@ -25,6 +25,12 @@ class FileUploadHandler
         'wm' => 'video/x-ms-wmv',
         'flv' => 'video/x-flv',
         'mkv' => 'video/x-matroska',
+
+        // 图片文件类型的
+        'jpg' => 'image/jpeg',
+        'jpeg' => 'image/jpeg',
+        'gif' => 'image/gif',
+        'png' => 'image/png',
     ];
 
     /**

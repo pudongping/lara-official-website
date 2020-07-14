@@ -13,6 +13,8 @@ namespace App\Repositories\Common;
 use App\Repositories\BaseRepository;
 use App\Models\Common\Image;
 use App\Handlers\FileUploadHandler;
+use App\Exceptions\ApiException;
+use App\Support\Code;
 
 class FilesRepository extends BaseRepository
 {
@@ -40,6 +42,8 @@ class FilesRepository extends BaseRepository
         $types = \Str::plural($request->type);  // 单词转成复数形式
         $file = $request->file;  // 文件实例
         $result = $this->fileUploadHandler->save($file, $types, $user->id, 'file');
+
+        if (!$result) throw new ApiException(Code::ERR_PARAMS, [], '文件上传失败！');
 
         $guard = \Auth::getDefaultDriver() ?? config('api.default_guard_name');  // 获取默认的守卫名称
 

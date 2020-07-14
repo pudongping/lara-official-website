@@ -13,6 +13,8 @@ namespace App\Repositories\Common;
 use App\Repositories\BaseRepository;
 use App\Models\Common\Image;
 use App\Handlers\ImageUploadHandler;
+use App\Exceptions\ApiException;
+use App\Support\Code;
 
 class ImageRepository extends BaseRepository
 {
@@ -58,6 +60,8 @@ class ImageRepository extends BaseRepository
         } else {
             $result = $this->imageUploadHandler->save($request->image, $types, $user->id, 'image', $size);
         }
+
+        if (!$result) throw new ApiException(Code::ERR_PARAMS, [], '文件上传失败！');
 
         $guard = \Auth::getDefaultDriver() ?? config('api.default_guard_name');  // 获取默认的守卫名称
 
