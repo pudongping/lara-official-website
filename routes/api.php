@@ -59,6 +59,7 @@ Route::group([
         Route::resource('menus', 'Setting\MenusController')->except(['create', 'show']);  // 菜单
         Route::resource('banners', 'Setting\BannersController')->only(['index', 'store', 'update', 'destroy']);  // banner 图
         Route::get('partners', 'Setting\PartnerController@index')->name('partners.index');  // 洽谈合作数据列表
+        Route::patch('partners/{partner}', 'Setting\PartnerController@update')->name('partners.update');  // 更新洽谈合作信息
 
         // =======================工具相关=========================
         Route::post('images', 'Common\ImagesController@store')->name('images.store');  // 上传图片

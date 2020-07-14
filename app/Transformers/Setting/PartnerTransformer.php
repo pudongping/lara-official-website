@@ -34,6 +34,7 @@ class PartnerTransformer extends BaseTransformer
             'name' => $resource->name,
             'phone' => $resource->phone,
             'type' => $resource->type,
+            'is_read' => $resource->is_read,
             'created_at' => $resource->created_at->format('Y-m-d H:i:s'),
             'updated_at' => $resource->updated_at->format('Y-m-d H:i:s'),
 

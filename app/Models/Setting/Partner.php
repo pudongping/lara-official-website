@@ -12,6 +12,6 @@ class Partner extends Model
     const TYPE_LOGISTICS = 3;  // 物流渠道
     const TYPE_OTHER = 4;  // 其他
 
-    protected $fillable = ['name', 'phone', 'type'];
+    protected $fillable = ['name', 'phone', 'type', 'is_read'];
 
 }

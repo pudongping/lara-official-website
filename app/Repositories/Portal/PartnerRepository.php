@@ -31,6 +31,10 @@ class PartnerRepository extends BaseRepository
             }
         });
 
+        if (!is_null($request->is_read)) {
+            $model = $model->where('is_read', intval($request->is_read));
+        }
+
         if (false !== ($between = $this->searchTime($request))) {
             $model = $model->whereBetween('created_at', $between);
         }
