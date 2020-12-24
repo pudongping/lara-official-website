@@ -1,0 +1,1784 @@
+{
+	"id": "318fc7dc-7556-453e-993e-9edc2283b41d",
+	"name": "lara-official-website",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [],
+	"folders_order": [
+		"d54768be-9fc6-4673-87e9-4ceff2c57935",
+		"2a0ddb94-2d29-49aa-8188-e5e9e700f523"
+	],
+	"protocolProfileBehavior": {},
+	"folders": [
+		{
+			"id": "0600b142-a3df-4100-944c-7a1d2ee95d8c",
+			"name": "banner",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "318fc7dc-7556-453e-993e-9edc2283b41d",
+			"folder": "d54768be-9fc6-4673-87e9-4ceff2c57935",
+			"order": [
+				"e7298695-d3a6-43ba-9910-f435c63ae0db"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"id": "2a0ddb94-2d29-49aa-8188-e5e9e700f523",
+			"name": "cms",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "318fc7dc-7556-453e-993e-9edc2283b41d",
+			"folder": null,
+			"order": [],
+			"folders_order": [
+				"db7044ee-2db9-4878-a4c3-94f3f9680d21",
+				"233eb5bd-c2d5-4857-820b-6926155bebde",
+				"29de22ad-0971-40d5-ac25-8649cea5982c",
+				"962cdae4-9510-4d9b-b98d-a1b5bae97286",
+				"bf68cbea-f277-47cc-bcd3-022359dab79b"
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"id": "d54768be-9fc6-4673-87e9-4ceff2c57935",
+			"name": "portal",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "318fc7dc-7556-453e-993e-9edc2283b41d",
+			"folder": null,
+			"order": [],
+			"folders_order": [
+				"0600b142-a3df-4100-944c-7a1d2ee95d8c",
+				"433fa5ed-9c02-46c0-85ca-6a6966b8ef69",
+				"792d99aa-eeb0-4a8a-93f2-e308e3e498ed"
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"id": "29de22ad-0971-40d5-ac25-8649cea5982c",
+			"name": "工具类",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "318fc7dc-7556-453e-993e-9edc2283b41d",
+			"folder": "2a0ddb94-2d29-49aa-8188-e5e9e700f523",
+			"order": [
+				"152f040e-1ca2-4854-ab25-777368f35fcb",
+				"63ee078a-0b96-48b3-8c4d-69653139f23a"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"id": "792d99aa-eeb0-4a8a-93f2-e308e3e498ed",
+			"name": "文章",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "318fc7dc-7556-453e-993e-9edc2283b41d",
+			"folder": "d54768be-9fc6-4673-87e9-4ceff2c57935",
+			"order": [
+				"b1c80cc8-dc44-469e-855e-e1fbd1f8f4e7",
+				"4de3c41d-059c-44f8-8193-53abec512be5"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"id": "bf68cbea-f277-47cc-bcd3-022359dab79b",
+			"name": "文章相关",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "318fc7dc-7556-453e-993e-9edc2283b41d",
+			"folder": "2a0ddb94-2d29-49aa-8188-e5e9e700f523",
+			"order": [
+				"e7e52f48-6059-43da-b489-f7e255138276",
+				"e6e81db7-69ba-4a84-b19b-fa1c3f9cd0e1",
+				"b25313c7-9e77-4e27-8889-4b8dfd24ead1",
+				"85ba059c-9cff-46a1-b4a8-b1ce831b4392",
+				"efb9f0be-62cc-4323-8625-761e2d912540"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"id": "db7044ee-2db9-4878-a4c3-94f3f9680d21",
+			"name": "管理员相关",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "318fc7dc-7556-453e-993e-9edc2283b41d",
+			"folder": "2a0ddb94-2d29-49aa-8188-e5e9e700f523",
+			"order": [
+				"dcaa1d76-90aa-4626-a637-9cc033b46682",
+				"da774e3a-a0a6-4685-995c-155fcdc902a0",
+				"336eaa69-8823-486a-9782-f736e04905a3",
+				"7a1ea01f-78eb-453a-9cdd-4203d79dee05",
+				"0da218f3-2686-448a-b42a-4f8388fc8ac0",
+				"3146dc60-2f1a-4409-b840-586c4835cf09",
+				"dec30b51-01f7-4e0a-a4fa-53c5a8fb2473",
+				"e0c91613-a805-4e55-b041-1cd9828a66b2",
+				"02dc250d-9e67-44bc-ae9a-c5b545aceac0"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"id": "233eb5bd-c2d5-4857-820b-6926155bebde",
+			"name": "系统相关",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "318fc7dc-7556-453e-993e-9edc2283b41d",
+			"folder": "2a0ddb94-2d29-49aa-8188-e5e9e700f523",
+			"order": [
+				"89706b16-db14-45b4-a714-df8579275926",
+				"86f84538-bd05-48ba-84db-b19a02e89f56",
+				"a5c810c9-228b-4453-95c0-7c43dd016193",
+				"d62094b1-aef8-4c70-a225-df94055335f5",
+				"ad27ee19-23d7-4418-a1d5-0ee8ba32c528",
+				"192d26e7-1eb7-415c-b5d4-94cbc067fec8"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"id": "433fa5ed-9c02-46c0-85ca-6a6966b8ef69",
+			"name": "系统相关",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "318fc7dc-7556-453e-993e-9edc2283b41d",
+			"folder": "d54768be-9fc6-4673-87e9-4ceff2c57935",
+			"order": [
+				"d6a4c83c-0253-4530-a008-c2fe7906f444",
+				"2c725065-dfb0-465f-ad5e-fa6415b4bb47"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"id": "962cdae4-9510-4d9b-b98d-a1b5bae97286",
+			"name": "轮播图",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "318fc7dc-7556-453e-993e-9edc2283b41d",
+			"folder": "2a0ddb94-2d29-49aa-8188-e5e9e700f523",
+			"order": [
+				"1fe50117-40a0-4c57-953b-66c0ae77564e",
+				"51e781de-33a3-4703-aee9-6b95e3968477",
+				"082950fd-5313-4a9e-8b06-55df4bf76ba2",
+				"0525f30a-a3e4-4eeb-ab5f-6544a1c6d647"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"requests": [
+		{
+			"id": "02dc250d-9e67-44bc-ae9a-c5b545aceac0",
+			"name": "更新管理员信息-/api/admin/users/2",
+			"url": "{{lara-office-website}}/api/admin/users/:id",
+			"description": "",
+			"data": [
+				{
+					"key": "name",
+					"value": "admin-t",
+					"description": "账号名称：/^[a-zA-Z]([-_a-zA-Z0-9]{3,20})+$/（账号名称，邮箱，手机号有任一即可）",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "1293@qq.com",
+					"description": "邮箱（账号名称，邮箱，手机号有任一即可）",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "phone",
+					"value": "18502728041",
+					"description": "手机号/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199)\\d{8}$/（账号名称，邮箱，手机号有任一即可）",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "current_password",
+					"value": "8797898",
+					"description": "密码，必须，不低于6个字符",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "new_password",
+					"value": "8797898",
+					"description": "新密码",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "new_password_confirmation",
+					"value": "8797898",
+					"description": "确认密码",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "avatar_image_id",
+					"value": "1",
+					"description": "头像id",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "state",
+					"value": "0",
+					"description": "1=正常，0=禁用",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "urlencoded",
+			"headerData": null,
+			"method": "PATCH",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": "1"
+				}
+			],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "db7044ee-2db9-4878-a4c3-94f3f9680d21",
+			"pathVariables": {
+				"id": "1"
+			}
+		},
+		{
+			"id": "0525f30a-a3e4-4eeb-ab5f-6544a1c6d647",
+			"name": "删除banner图-/api/admin/banners/:banner",
+			"url": "{{lara-office-website}}/api/admin/banners/:id",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "DELETE",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": "2"
+				}
+			],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "962cdae4-9510-4d9b-b98d-a1b5bae97286",
+			"pathVariables": {
+				"id": "2"
+			}
+		},
+		{
+			"id": "082950fd-5313-4a9e-8b06-55df4bf76ba2",
+			"name": "更新banner图-/api/admin/banners/:banner",
+			"url": "{{lara-office-website}}/api/admin/banners/:id",
+			"description": "",
+			"data": [
+				{
+					"key": "title",
+					"value": "002banner图001",
+					"description": "banner标题",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "img",
+					"value": "0002abc.png",
+					"description": "banner图片地址",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "status",
+					"value": "1",
+					"description": "banner状态，1=显示，0=隐藏",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "jump_type",
+					"value": "2",
+					"description": "跳转类型，1=商品详情，2=活动外链",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "jump_url",
+					"value": "002www.baidu.com",
+					"description": "具体跳转的地址",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "sort",
+					"value": "6",
+					"description": "排序编号",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "type",
+					"value": "2",
+					"description": "图片类型，1=banner，2=活动专区",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "urlencoded",
+			"headerData": null,
+			"method": "PATCH",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": "2"
+				}
+			],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "962cdae4-9510-4d9b-b98d-a1b5bae97286",
+			"pathVariables": {
+				"id": "2"
+			}
+		},
+		{
+			"id": "0da218f3-2686-448a-b42a-4f8388fc8ac0",
+			"name": "删除管理员-/api/admin/users/:id",
+			"url": "{{lara-office-website}}/api/admin/users/:id",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "DELETE",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": "3",
+					"description": "管理员id"
+				}
+			],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "db7044ee-2db9-4878-a4c3-94f3f9680d21",
+			"pathVariables": {
+				"id": "3"
+			}
+		},
+		{
+			"id": "152f040e-1ca2-4854-ab25-777368f35fcb",
+			"name": "上传图片-/api/admin/images",
+			"url": "{{lara-office-website}}/api/admin/images",
+			"description": "",
+			"data": [
+				{
+					"key": "type",
+					"value": "avatar",
+					"description": "图片类型，字符串，可以自定义（avatar，base64）",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "image",
+					"value": "/C:/Users/Alex/Desktop/img/003.png",
+					"description": "图片资源",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "params",
+			"headerData": null,
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "29de22ad-0971-40d5-ac25-8649cea5982c",
+			"pathVariables": {}
+		},
+		{
+			"id": "192d26e7-1eb7-415c-b5d4-94cbc067fec8",
+			"name": "更新洽谈信息-/api/admin/partners/:id",
+			"url": "{{lara-office-website}}/api/admin/partners/:id",
+			"description": "",
+			"data": [
+				{
+					"key": "is_read",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "名字1444",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "phone",
+					"value": "12546987895",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "urlencoded",
+			"headerData": null,
+			"method": "PATCH",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": "1"
+				}
+			],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "233eb5bd-c2d5-4857-820b-6926155bebde",
+			"pathVariables": {
+				"id": "1"
+			}
+		},
+		{
+			"id": "1fe50117-40a0-4c57-953b-66c0ae77564e",
+			"name": "banner列表-/api/admin/banners",
+			"url": "{{lara-office-website}}/api/admin/banners",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "status",
+					"value": "1",
+					"equals": true,
+					"description": "banner状态，1=显示，0=隐藏",
+					"enabled": false
+				},
+				{
+					"key": "jump_type",
+					"value": "3",
+					"equals": true,
+					"description": "跳转类型，1=商品详情，2=活动外链",
+					"enabled": false
+				},
+				{
+					"key": "type",
+					"value": "2",
+					"equals": true,
+					"description": "图片类型，1=banner，2=活动专区",
+					"enabled": false
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "962cdae4-9510-4d9b-b98d-a1b5bae97286",
+			"pathVariables": {}
+		},
+		{
+			"id": "2c725065-dfb0-465f-ad5e-fa6415b4bb47",
+			"name": "新增洽谈合作信息-/api/partners",
+			"url": "{{lara-office-website}}/api/partners",
+			"description": "",
+			"data": [
+				{
+					"key": "name",
+					"value": "李四",
+					"description": "姓名",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "phone",
+					"value": "18502728040",
+					"description": "联系人电话号码",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "type",
+					"value": "2",
+					"description": "1=供应商入驻,2=销售渠道,3=物流渠道,4=其他",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "params",
+			"headerData": null,
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "433fa5ed-9c02-46c0-85ca-6a6966b8ef69",
+			"pathVariables": {}
+		},
+		{
+			"id": "3146dc60-2f1a-4409-b840-586c4835cf09",
+			"name": "当前登录用户信息-/api/admin/user",
+			"url": "{{lara-office-website}}/api/admin/user",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "debug",
+					"value": "1",
+					"equals": true,
+					"description": null,
+					"enabled": false
+				},
+				{
+					"key": "raw",
+					"value": "1",
+					"equals": true,
+					"description": null,
+					"enabled": false
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "db7044ee-2db9-4878-a4c3-94f3f9680d21",
+			"pathVariables": {}
+		},
+		{
+			"id": "336eaa69-8823-486a-9782-f736e04905a3",
+			"name": "创建新管理员-/api/admin/users",
+			"url": "{{lara-office-website}}/api/admin/users",
+			"description": "",
+			"data": [
+				{
+					"key": "name",
+					"value": "admin-test",
+					"description": "账号名称：/^[a-zA-Z]([-_a-zA-Z0-9]{3,20})+$/（账号名称，邮箱，手机号有任一即可）",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "123@qq.com",
+					"description": "邮箱（账号名称，邮箱，手机号有任一即可）",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "phone",
+					"value": "18502728040",
+					"description": "手机号/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199)\\d{8}$/（账号名称，邮箱，手机号有任一即可）",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"description": "密码，必须，不低于6个字符",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password_confirmation",
+					"value": "123456",
+					"description": "确认密码",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "avatar_image_id",
+					"value": "1",
+					"description": "头像id",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "params",
+			"headerData": null,
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "db7044ee-2db9-4878-a4c3-94f3f9680d21",
+			"pathVariables": {}
+		},
+		{
+			"id": "4de3c41d-059c-44f8-8193-53abec512be5",
+			"name": "文章详情-/api/articles/:id",
+			"url": "{{lara-office-website}}/api/articles/:id",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": "1"
+				}
+			],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "792d99aa-eeb0-4a8a-93f2-e308e3e498ed",
+			"pathVariables": {
+				"id": "1"
+			}
+		},
+		{
+			"id": "51e781de-33a3-4703-aee9-6b95e3968477",
+			"name": "新增banner图片-/api/admin/banners",
+			"url": "{{lara-office-website}}/api/admin/banners",
+			"description": "",
+			"data": [
+				{
+					"key": "title",
+					"value": "banner图001",
+					"description": "banner标题",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "img",
+					"value": "abc.png",
+					"description": "banner图片地址",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "status",
+					"value": "1",
+					"description": "banner状态，1=显示，0=隐藏",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "jump_type",
+					"value": "1",
+					"description": "跳转类型，1=商品详情，2=活动外链",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "jump_url",
+					"value": "www.baidu.com",
+					"description": "具体跳转的地址",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "sort",
+					"value": "10",
+					"description": "排序编号",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "type",
+					"value": "1",
+					"description": "图片类型，1=banner，2=活动专区",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "urlencoded",
+			"headerData": null,
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "962cdae4-9510-4d9b-b98d-a1b5bae97286",
+			"pathVariables": {}
+		},
+		{
+			"id": "63ee078a-0b96-48b3-8c4d-69653139f23a",
+			"name": "上传文件资源-/api/admin/files",
+			"url": "{{lara-office-website}}/api/admin/files",
+			"description": "",
+			"data": [
+				{
+					"key": "file",
+					"value": "/C:/Users/Alex/Desktop/img/010.jpg",
+					"description": "文件资源",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "type",
+					"value": "video",
+					"description": "文件资源类型，目前只允许上传视频类，video资源",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "params",
+			"headerData": null,
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "debug",
+					"value": "1",
+					"equals": true,
+					"description": null,
+					"enabled": false
+				},
+				{
+					"key": "raw",
+					"value": "1",
+					"equals": true,
+					"description": null,
+					"enabled": false
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "29de22ad-0971-40d5-ac25-8649cea5982c",
+			"pathVariables": {}
+		},
+		{
+			"id": "7a1ea01f-78eb-453a-9cdd-4203d79dee05",
+			"name": "某个用户的详情信息-/api/admin/users/:id",
+			"url": "{{lara-office-website}}/api/admin/users/:id",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": "1"
+				}
+			],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "db7044ee-2db9-4878-a4c3-94f3f9680d21",
+			"pathVariables": {
+				"id": "1"
+			}
+		},
+		{
+			"id": "85ba059c-9cff-46a1-b4a8-b1ce831b4392",
+			"name": "文章详情-/api/admin/articles/:id",
+			"url": "{{lara-office-website}}/api/admin/articles/:id",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": "1"
+				}
+			],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "bf68cbea-f277-47cc-bcd3-022359dab79b",
+			"pathVariables": {
+				"id": "1"
+			}
+		},
+		{
+			"id": "86f84538-bd05-48ba-84db-b19a02e89f56",
+			"name": "清空所有缓存-/api/admin/clearCache",
+			"url": "{{lara-office-website}}/api/admin/clearCache",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "233eb5bd-c2d5-4857-820b-6926155bebde",
+			"pathVariables": {}
+		},
+		{
+			"id": "89706b16-db14-45b4-a714-df8579275926",
+			"name": "操作日志列表-/api/admin/logs",
+			"url": "{{lara-office-website}}/api/admin/logs",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "s",
+					"value": "张三",
+					"equals": true,
+					"description": "模糊查询，支持description（描述信息）client_ip（客户端ip地址）",
+					"enabled": false
+				},
+				{
+					"key": "page",
+					"value": "3",
+					"equals": true,
+					"description": "可选，当前页码数",
+					"enabled": false
+				},
+				{
+					"key": "per_page",
+					"value": "7",
+					"equals": true,
+					"description": "可选，每页显示数量",
+					"enabled": false
+				},
+				{
+					"key": "order_by",
+					"value": "id,desc|created_at,asc",
+					"equals": true,
+					"description": "可选，排序规则",
+					"enabled": false
+				},
+				{
+					"key": "begin",
+					"value": "2020-2-13 22:32:50",
+					"equals": true,
+					"description": "可选，时间区间查询，开始时间",
+					"enabled": false
+				},
+				{
+					"key": "end",
+					"value": "2020-2-15 22:32:50",
+					"equals": true,
+					"description": "可选，时间区间查询，结束时间",
+					"enabled": false
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "233eb5bd-c2d5-4857-820b-6926155bebde",
+			"pathVariables": {}
+		},
+		{
+			"id": "a5c810c9-228b-4453-95c0-7c43dd016193",
+			"name": "站点设置列表数据-/api/admin/settings",
+			"url": "{{lara-office-website}}/api/admin/settings",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "233eb5bd-c2d5-4857-820b-6926155bebde",
+			"pathVariables": {}
+		},
+		{
+			"id": "ad27ee19-23d7-4418-a1d5-0ee8ba32c528",
+			"name": "洽谈信息列表-/api/admin/partners",
+			"url": "{{lara-office-website}}/api/admin/partners?nopage=0&is_read=0",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "s",
+					"value": "alex",
+					"equals": true,
+					"description": "可选，关键字查询，支持：用户名、手机号、邮箱",
+					"enabled": false
+				},
+				{
+					"key": "begin",
+					"value": "2020-2-13 22:32:50",
+					"equals": true,
+					"description": "可选，时间区间查询，开始时间",
+					"enabled": false
+				},
+				{
+					"key": "end",
+					"value": "2020-2-15 22:32:50",
+					"equals": true,
+					"description": "可选，时间区间查询，结束时间",
+					"enabled": false
+				},
+				{
+					"key": "nopage",
+					"value": "0",
+					"equals": true,
+					"description": "可选，不要分页，默认不要，设置为 0 或者 false，则表示要分页",
+					"enabled": true
+				},
+				{
+					"key": "page",
+					"value": "3",
+					"equals": true,
+					"description": "可选，当前页码数",
+					"enabled": false
+				},
+				{
+					"key": "per_page",
+					"value": "1",
+					"equals": true,
+					"description": "可选，每页显示数量",
+					"enabled": false
+				},
+				{
+					"key": "order_by",
+					"value": "id,desc|name,asc",
+					"equals": true,
+					"description": " 可选，排序规则",
+					"enabled": false
+				},
+				{
+					"key": "is_read",
+					"value": "0",
+					"equals": true,
+					"description": "可选，是否已读，1=已读，0=未读",
+					"enabled": true
+				},
+				{
+					"key": "debug",
+					"value": "1",
+					"equals": true,
+					"description": null,
+					"enabled": false
+				},
+				{
+					"key": "raw",
+					"value": "1",
+					"equals": true,
+					"description": null,
+					"enabled": false
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "233eb5bd-c2d5-4857-820b-6926155bebde",
+			"pathVariables": {}
+		},
+		{
+			"id": "b1c80cc8-dc44-469e-855e-e1fbd1f8f4e7",
+			"name": "文章列表-/api/articles?type=1&nopage=0&page=0&per_page=2&order_by=id,desc",
+			"url": "{{lara-office-website}}/api/articles?type=1&nopage=0&page=0&per_page=2&order_by=id,desc",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "type",
+					"value": "1",
+					"equals": true,
+					"description": "可选，文章类型：1=新闻中心，2=关于我们，3=用户协议，4=隐私政策",
+					"enabled": true
+				},
+				{
+					"key": "s",
+					"value": "alex",
+					"equals": true,
+					"description": "可选，支持，title（文章标题）、excerpt（文章摘要）、body（文章正文）",
+					"enabled": false
+				},
+				{
+					"key": "begin",
+					"value": "2020-2-13 22:32:50",
+					"equals": true,
+					"description": "可选，时间区间查询，开始时间",
+					"enabled": false
+				},
+				{
+					"key": "end",
+					"value": "2020-2-15 22:32:50",
+					"equals": true,
+					"description": "可选，时间区间查询，结束时间",
+					"enabled": false
+				},
+				{
+					"key": "nopage",
+					"value": "0",
+					"equals": true,
+					"description": "可选，不要分页，默认不要，设置为 0 或者 false，则表示要分页",
+					"enabled": true
+				},
+				{
+					"key": "page",
+					"value": "0",
+					"equals": true,
+					"description": "可选，当前页码数",
+					"enabled": true
+				},
+				{
+					"key": "per_page",
+					"value": "2",
+					"equals": true,
+					"description": "可选，每页显示数量",
+					"enabled": true
+				},
+				{
+					"key": "order_by",
+					"value": "id,desc",
+					"equals": true,
+					"description": " 可选，排序规则",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": "792d99aa-eeb0-4a8a-93f2-e308e3e498ed",
+			"pathVariables": {}
+		},
+		{
+			"id": "b25313c7-9e77-4e27-8889-4b8dfd24ead1",
+			"name": "删除文章-/api/admin/articles/:id",
+			"url": "{{lara-office-website}}/api/admin/articles/:id",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "DELETE",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": "2"
+				}
+			],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "bf68cbea-f277-47cc-bcd3-022359dab79b",
+			"pathVariables": {
+				"id": "2"
+			}
+		},
+		{
+			"id": "d62094b1-aef8-4c70-a225-df94055335f5",
+			"name": "更新站点设置-/api/admin/settings/update/:id",
+			"url": "{{lara-office-website}}/api/admin/settings/update/:id",
+			"description": "",
+			"data": [
+				{
+					"key": "contact_name",
+					"value": "联系人姓名",
+					"description": "联系人姓名",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "contact_phone",
+					"value": "联系人电话",
+					"description": "联系人电话",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "contact_email",
+					"value": "1414818093@qq.com",
+					"description": "联系人邮箱",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "contact_address",
+					"value": "联系人地址",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "copy_right",
+					"value": "版权信息",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "record_n_varchar",
+					"value": "备案号",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "seo_description",
+					"value": "seo 描述信息",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "seo_keyword",
+					"value": "seo 关键词",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "site_name",
+					"value": "站点名称",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "website",
+					"value": "网站地址",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "urlencoded",
+			"headerData": null,
+			"method": "PUT",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": "1",
+					"description": "数据id"
+				}
+			],
+			"queryParams": [
+				{
+					"key": "debug",
+					"value": "1",
+					"equals": true,
+					"description": null,
+					"enabled": false
+				},
+				{
+					"key": "raw",
+					"value": "1",
+					"equals": true,
+					"description": null,
+					"enabled": false
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "233eb5bd-c2d5-4857-820b-6926155bebde",
+			"pathVariables": {
+				"id": "1"
+			}
+		},
+		{
+			"id": "d6a4c83c-0253-4530-a008-c2fe7906f444",
+			"name": "站点设置-/api/settings",
+			"url": "{{lara-office-website}}/api/settings",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "433fa5ed-9c02-46c0-85ca-6a6966b8ef69",
+			"pathVariables": {}
+		},
+		{
+			"id": "da774e3a-a0a6-4685-995c-155fcdc902a0",
+			"name": "管理员列表-/api/admin/users",
+			"url": "{{lara-office-website}}/api/admin/users",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "db7044ee-2db9-4878-a4c3-94f3f9680d21",
+			"pathVariables": {}
+		},
+		{
+			"id": "dcaa1d76-90aa-4626-a637-9cc033b46682",
+			"name": "管理员登录-/api/admin/authorizations",
+			"url": "{{lara-office-website}}/api/admin/authorizations",
+			"description": "",
+			"data": [
+				{
+					"key": "account",
+					"value": "admin",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "db7044ee-2db9-4878-a4c3-94f3f9680d21",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "dec30b51-01f7-4e0a-a4fa-53c5a8fb2473",
+			"name": "刷新token-/api/admin/authorizations/current",
+			"url": "{{lara-office-website}}/api/admin/authorizations/current",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "db7044ee-2db9-4878-a4c3-94f3f9680d21",
+			"pathVariables": {}
+		},
+		{
+			"id": "e0c91613-a805-4e55-b041-1cd9828a66b2",
+			"name": "退出登录（删除token）-/api/admin/authorizations/current",
+			"url": "{{lara-office-website}}/api/admin/authorizations/current",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "db7044ee-2db9-4878-a4c3-94f3f9680d21",
+			"pathVariables": {}
+		},
+		{
+			"id": "e6e81db7-69ba-4a84-b19b-fa1c3f9cd0e1",
+			"name": "更新文章-/api/admin/articles/:id",
+			"url": "{{lara-office-website}}/api/admin/articles/:id",
+			"description": "",
+			"data": [
+				{
+					"key": "title",
+					"value": "我是文章标题55",
+					"description": "必填，标题",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "cover",
+					"value": "aa.png55",
+					"description": "可选，封面资源",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "cover_type",
+					"value": "2",
+					"description": "可选，封面类型：1=图片，2=视频",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "excerpt",
+					"value": "我是文章摘要55",
+					"description": "必填，摘要",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "body",
+					"value": "<p>正文内容</p>55",
+					"description": "必填。，正文内容",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "order",
+					"value": "10",
+					"description": "可选，排序编号",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "type",
+					"value": "2",
+					"description": "必填，文章类型：1=新闻中心，2=关于我们，3=用户协议，4=隐私政策",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "status",
+					"value": "1",
+					"description": "文章状态，0=隐藏，1=显示",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "urlencoded",
+			"headerData": null,
+			"method": "PATCH",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": "2"
+				}
+			],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "bf68cbea-f277-47cc-bcd3-022359dab79b",
+			"pathVariables": {
+				"id": "2"
+			}
+		},
+		{
+			"id": "e7298695-d3a6-43ba-9910-f435c63ae0db",
+			"name": "轮播图列表-/api/banners",
+			"url": "{{lara-office-website}}/api/banners",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "0600b142-a3df-4100-944c-7a1d2ee95d8c",
+			"pathVariables": {}
+		},
+		{
+			"id": "e7e52f48-6059-43da-b489-f7e255138276",
+			"name": "添加文章-/api/admin/articles",
+			"url": "{{lara-office-website}}/api/admin/articles",
+			"description": "",
+			"data": [
+				{
+					"key": "title",
+					"value": "我是文章标题99",
+					"description": "必填，标题",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "cover",
+					"value": "aa.png",
+					"description": "可选，封面资源",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "cover_type",
+					"value": "1",
+					"description": "可选，封面类型：1=图片，2=视频",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "excerpt",
+					"value": "我是文章摘要44",
+					"description": "必填，摘要",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "body",
+					"value": "<p>正文内容</p>44",
+					"description": "必填。，正文内容",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "order",
+					"value": "10",
+					"description": "可选，排序编号",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "type",
+					"value": "1",
+					"description": "必填，文章类型：1=新闻中心，2=关于我们，3=用户协议，4=隐私政策",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "status",
+					"value": "1",
+					"description": "文章状态，0=隐藏，1=显示",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "urlencoded",
+			"headerData": null,
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "bf68cbea-f277-47cc-bcd3-022359dab79b",
+			"pathVariables": {}
+		},
+		{
+			"id": "efb9f0be-62cc-4323-8625-761e2d912540",
+			"name": "文章列表-/api/admin/articles",
+			"url": "{{lara-office-website}}/api/admin/articles",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "debug",
+					"value": "1",
+					"equals": true,
+					"description": null,
+					"enabled": false
+				},
+				{
+					"key": "raw",
+					"value": "1",
+					"equals": true,
+					"description": null,
+					"enabled": false
+				},
+				{
+					"key": "type",
+					"value": "1",
+					"equals": true,
+					"description": "可选，文章类型：1=新闻中心，2=关于我们，3=用户协议，4=隐私政策",
+					"enabled": false
+				},
+				{
+					"key": "status",
+					"value": "1",
+					"equals": true,
+					"description": "可选，文章状态，0=隐藏，1=显示",
+					"enabled": false
+				},
+				{
+					"key": "s",
+					"value": "alex",
+					"equals": true,
+					"description": "可选，支持，title（文章标题）、excerpt（文章摘要）、body（文章正文）",
+					"enabled": false
+				},
+				{
+					"key": "begin",
+					"value": "2020-2-13 22:32:50",
+					"equals": true,
+					"description": "可选，时间区间查询，开始时间",
+					"enabled": false
+				},
+				{
+					"key": "end",
+					"value": "2020-2-15 22:32:50",
+					"equals": true,
+					"description": "可选，时间区间查询，结束时间",
+					"enabled": false
+				},
+				{
+					"key": "nopage",
+					"value": "0",
+					"equals": true,
+					"description": "可选，不要分页，默认不要，设置为 0 或者 false，则表示要分页",
+					"enabled": false
+				},
+				{
+					"key": "page",
+					"value": "3",
+					"equals": true,
+					"description": "可选，当前页码数",
+					"enabled": false
+				},
+				{
+					"key": "per_page",
+					"value": "1",
+					"equals": true,
+					"description": "可选，每页显示数量",
+					"enabled": false
+				},
+				{
+					"key": "order_by",
+					"value": "id,desc|name,asc",
+					"equals": true,
+					"description": " 可选，排序规则",
+					"enabled": false
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{admin1}}"
+					}
+				]
+			},
+			"events": null,
+			"folder": "bf68cbea-f277-47cc-bcd3-022359dab79b",
+			"pathVariables": {}
+		}
+	]
+}
