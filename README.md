@@ -1,18 +1,42 @@
 ## 项目概述
-- 项目名称：lara-sample-api
+- 项目名称：lara-official-website
 - 项目简介：基于 laravel6.x 开发的 api 接口
 
+## 关于分支
+- master：基于 laravel 6.x 写的一套商城项目（前端门户接口和后台管理接口放在一个项目中，对应本人仓库下的 lara-sample-api 项目 master 分支）
+- base-api-function：基于 laravel 6.x 写的一套基础 api 架构方法（对应本人仓库下的 lara-sample-api 项目 base-api-function 分支）
+- off-web：基于 base-api-function 分支开发的官网 api
 
-## 功能如下
-- 用户认证 —— 基于 jwt 认证登录、注册、登出；
+
+## 大致功能
+###  master 分支下
+- 用户认证 —— 基于 jwt 认证登录、注册、登出、找回密码
+- 图片验证码、短信验证码
 - 支持多 guard （目前门户为：api、后台管理为：admin）
 - 前后台用户支持多种普通认证形式 —— 账号、手机号、邮箱
 - 前台用户第三方登录目前支持 —— 微信、微博（后续若需要支持其他第三方登录，只需要下载安装包即可，代码已经做了兼容处理）
-- 个人中心 —— 用户个人中心，编辑资料；
-- 资源管理（上传图片） —— 修改头像时上传图片；
-- 基于 RBAC 的权限控制 —— 用户，角色，权限，路由；
+- 个人中心 —— 用户个人中心，编辑资料
+- 资源管理（上传图片） —— 修改头像时上传图片
+- 基于 RBAC 的权限控制 —— 用户，角色，权限，路由
 - 抽奖算法（支持大转盘、九宫格、刮刮乐）
+- SPU —— 多品牌、多类目（类目树形结构）、收藏商品、购物车
+- 多规格 SKU
+- 图片资源系统
 - 系统设置
+- 更多功能 …… 你可以直接通过查看 routes/api.php 路由文件中了解，均有详细的注释信息
+
+### base-api-function 分支下
+- 封装了 request
+- 封装了 transformer
+- 统一了返回数据结构
+- 更多功能 …… 你可以直接通过查看 routes/api.php 路由文件中了解，均有详细的注释信息
+
+### off-web
+- 基于 RBAC 的权限控制 —— 用户，角色，权限，路由
+- 上传文件
+- 文章系统
+- 门户 banner、洽谈合作
+- 更多功能 …… 你可以直接通过查看 routes/api.php 路由文件中了解，均有详细的注释信息
 
 ## 后端扩展包使用情况
 
@@ -42,18 +66,18 @@
 
 1. 克隆源代码
 
-克隆 `lara-sample-api` 源代码到本地：
+克隆 `lara-official-website` 源代码到本地：
 
 ```
 // gitee
-git clone git@gitee.com:pudongping/lara-sample-api.git
+git clone git@gitee.com:pudongping/lara-official-website.git
 ```
 
 2. 安装扩展包依赖
 
 ```
-// 先切换到 lara-sample-api 项目根目录
-cd lara-sample-api
+// 先切换到 lara-official-website 项目根目录
+cd lara-official-website
 
 // 执行安装命令
 composer install
@@ -70,7 +94,7 @@ cp .env.example .env
 ```
 
 DB_HOST=localhost
-DB_DATABASE=lara-sample-api
+DB_DATABASE=lara-official-website
 DB_USERNAME=homestead
 DB_PASSWORD=secret
 
@@ -112,10 +136,10 @@ php artisan storage:link
 useradd -s /sbin/nologin www
 
 // 将项目目录所有权赋予 www 用户
-chown -Rf www:www larablog 或者执行 setfacl -Rm u:www:rw lara-sample-api
+chown -Rf www:www larablog 或者执行 setfacl -Rm u:www:rw lara-official-website
 
 // 给 storage 目录赋权限
-chmod -Rf 0755 lara-sample-api/storage/
+chmod -Rf 0755 lara-official-website/storage/
 
 ```
 
@@ -126,10 +150,10 @@ chmod -Rf 0755 lara-sample-api/storage/
 ```
 // Linux 或 MacOS 环境
 
-echo "192.168.10.10   lara-sample-api.test" | sudo tee -a /etc/hosts
+echo "192.168.10.10   lara-official-website.test" | sudo tee -a /etc/hosts
 
 // Windows 环境
 需要打开 C:/Windows/System32/Drivers/etc/hosts  文件，然后新增一行
 
-192.168.10.10 lara-sample-api.test
+192.168.10.10 lara-official-website.test
 ```
